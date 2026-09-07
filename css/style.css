@@ -546,6 +546,10 @@ html[dir="ltr"] .dia-label{
   font-weight:500;
   color:var(--muted);
   letter-spacing:.4px;
+  /* keep the line clear of the diagonal wedge: wrap it into two centred lines */
+  max-width:min(560px,100%);
+  margin-inline:auto;
+  text-wrap:balance;
   margin-bottom:clamp(20px,3.6vh,36px);
   opacity:0;transform:translateY(20px);
   animation:rise .9s var(--ease) .32s forwards;
@@ -568,10 +572,10 @@ html[dir="ltr"] .dia-label{
   opacity:0;transform:translateY(18px);
   animation:rise .8s var(--ease) forwards;
 }
-.hero-links li:nth-child(1){animation-delay:.5s;padding-inline-start:0}
-.hero-links li:nth-child(2){animation-delay:.62s;padding-inline-start:9%}
-.hero-links li:nth-child(3){animation-delay:.74s;padding-inline-start:18%}
-.hero-links li:nth-child(4){animation-delay:.86s;padding-inline-start:27%}
+.hero-links li:nth-child(1){animation-delay:.5s;padding-inline-end:0}
+.hero-links li:nth-child(2){animation-delay:.62s;padding-inline-end:9%}
+.hero-links li:nth-child(3){animation-delay:.74s;padding-inline-end:18%}
+.hero-links li:nth-child(4){animation-delay:.86s;padding-inline-end:27%}
 
 .hero-links a{
   display:block;
@@ -1150,7 +1154,7 @@ html[dir="ltr"] .foot-links a:hover{padding-inline-start:7px}
   .burger{top:20px;inset-inline-end:18px}
   .quick-menu{padding-top:80px}
   .hero{padding-top:100px}
-  .hero-links li{padding-inline-start:0 !important}
+  .hero-links li{padding-inline-end:0 !important}
   .hero-strip{clip-path:polygon(0 0,100% 30px,100% 100%,0 100%);padding-top:62px}
   html[dir="ltr"] .hero-strip{clip-path:polygon(0 30px,100% 0,100% 100%,0 100%)}
   .hero-strip .shell{justify-content:center;text-align:center}
