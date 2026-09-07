@@ -1,0 +1,36 @@
+# ابتكار للحلول الذكية — ebitkar.com
+
+# ── إجبار HTTPS ──────────────────────────────────────────────
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── ضغط الملفات ──────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript image/svg+xml
+</IfModule>
+
+# ── مدة التخزين المؤقت ───────────────────────────────────────
+# الصور مدتها طويلة، أما CSS/JS فيوم واحد حتى تظهر التعديلات بسرعة
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png       "access plus 1 year"
+  ExpiresByType image/svg+xml   "access plus 1 year"
+  ExpiresByType image/jpeg      "access plus 1 year"
+  ExpiresByType text/css        "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType text/html       "access plus 0 seconds"
+</IfModule>
+
+# ── الترميز ──────────────────────────────────────────────────
+AddDefaultCharset UTF-8
+
+# ── منع عرض محتويات المجلدات ─────────────────────────────────
+Options -Indexes
+
+# ── حجب ملفات التطوير التي ينسخها Git إلى public_html ────────
+<FilesMatch "^(server\.js|build-artifact\.js|README\.md|\.gitignore)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.claude
