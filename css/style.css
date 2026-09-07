@@ -402,8 +402,8 @@ html[dir="ltr"] .wedge-teeth{
 /* the line that runs along the diagonal edge */
 .wedge-label{
   position:absolute;
-  top:-4px;
-  inset-inline-end:calc(100% + 30px);
+  top:-58px;
+  inset-inline-end:calc(100% + 104px);
   transform-origin:top left;
   transform:rotate(58deg);
   font-size:12px;
@@ -447,7 +447,7 @@ html[dir="rtl"] .hero-contact a{
   z-index:6;
   margin:0;
   left:4%;right:auto;
-  bottom:19%;
+  bottom:9%;
   width:min(300px,26vw);
   font-size:clamp(15px,1.35vw,19px);
   font-weight:300;
@@ -491,10 +491,22 @@ html[dir="ltr"] .hero-quote{left:auto;right:4%}
   width:var(--d);height:var(--d);
   display:grid;place-items:center;
   transform:rotate(45deg);
-  background:linear-gradient(140deg,#8d8d8d,#4f4f4f);
-  box-shadow:0 8px 20px rgba(0,0,0,.22);
+  background:linear-gradient(140deg,#a2a2a2,#454545);
+  /* the tile is rotated 45deg, so an 8/8 local offset falls straight down
+     on screen — that keeps the light source consistent across the cluster */
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,.3),
+    inset -1px -1px 0 rgba(0,0,0,.4),
+    7px 7px 12px rgba(0,0,0,.4),
+    14px 14px 30px rgba(0,0,0,.26);
   overflow:hidden;
   transition:transform .45s var(--ease),box-shadow .4s,background .4s;
+}
+/* bevel sheen, light falling from the upper-left facet */
+.dia::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.2) 0%,rgba(255,255,255,.05) 40%,rgba(0,0,0,.12) 100%);
+  pointer-events:none;
 }
 .dia::before{
   content:'';position:absolute;inset:0;
@@ -513,8 +525,12 @@ html[dir="ltr"] .hero-quote{left:auto;right:4%}
 }
 .dia:hover{
   background:linear-gradient(140deg,var(--orange-2),var(--orange-dk));
-  transform:rotate(45deg) scale(1.09);
-  box-shadow:0 14px 30px rgba(246,133,13,.4);
+  transform:rotate(45deg) scale(1.1) translate(-3px,-3px);
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,.4),
+    inset -1px -1px 0 rgba(0,0,0,.25),
+    11px 11px 16px rgba(0,0,0,.34),
+    20px 20px 42px rgba(246,133,13,.34);
   z-index:3;
 }
 .dia-1{inset-inline-start:calc(var(--d) * .2);top:calc(var(--d) * 1.05)}
