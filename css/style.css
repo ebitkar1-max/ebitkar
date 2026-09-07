@@ -1495,6 +1495,10 @@ html[dir="rtl"] .foot-nav a::after{translate:50% 0}
   /* phones: same as the reference — burger only, no diamond cluster */
   .hero-wedge,.hero-quote,.dia-label,.diamonds{display:none}
 
+  /* the dark strip (socials + links + copyright) landed inside the first
+     screen once the hero shrank — it duplicates the footer, so drop it here */
+  .hero-strip{display:none}
+
   /* nothing dark behind the burger any more */
   .burger span,body.scrolled .burger span{background:var(--ink)}
 
