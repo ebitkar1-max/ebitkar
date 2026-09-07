@@ -1,3 +1,6 @@
+# بيانات الدخول لصندوق البريد — لا تُرفع أبداً
+mail-config.php
+
 # build output — regenerate with: node build-artifact.js
 dist-preview.html
 

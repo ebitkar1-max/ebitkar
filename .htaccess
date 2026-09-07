@@ -37,7 +37,7 @@ AddDefaultCharset UTF-8
 Options -Indexes
 
 # ── حجب ملفات التطوير التي ينسخها Git إلى public_html ────────
-<FilesMatch "^(server\.js|build-artifact\.js|README\.md|\.gitignore)$">
+<FilesMatch "^(server\.js|build-artifact\.js|README\.md|\.gitignore|mail-config\.php|mail-config\.example\.php|smtp-send\.php)$">
   Require all denied
 </FilesMatch>
 RedirectMatch 404 /\.git

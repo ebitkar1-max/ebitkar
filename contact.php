@@ -87,15 +87,32 @@ foreach ($headers as $k => $v) {
 
 $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 
-// خادم هوستنجر يستخدم hsendmail الذي يرفض المعاملات الإضافية،
-// لذا نرسل بالطريقة القياسية أولاً ثم نجرب -f كخطة بديلة.
-$sent = @mail(MAILBOX, $encodedSubject, $body, $headerLines);
+/* ── الإرسال ────────────────────────────────────────────────
+   هوستنجر يرفض mail() على هذه الاستضافة، فالمسار الأساسي هو SMTP.
+   يبقى mail() كخطة بديلة لو نُقل الموقع لاستضافة أخرى تدعمه.       */
+$sent = false;
+$why  = '';
 
-if (!$sent) {
-    $sent = @mail(MAILBOX, $encodedSubject, $body, $headerLines, '-f' . SENDER);
+$configPath = __DIR__ . '/mail-config.php';
+
+if (is_file($configPath)) {
+    require_once __DIR__ . '/smtp-send.php';
+    try {
+        smtp_send((array)require $configPath, MAILBOX, $subject, $body, $email);
+        $sent = true;
+    } catch (Throwable $e) {
+        $why = $e->getMessage();
+    }
+} else {
+    $why = 'no_config';
 }
 
 if (!$sent) {
+    $sent = @mail(MAILBOX, $encodedSubject, $body, $headerLines);
+}
+
+if (!$sent) {
+    error_log('[ebitkar contact] send failed: ' . $why);
     fail('send_failed', 500);
 }
 
