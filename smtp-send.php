@@ -14,7 +14,8 @@ function smtp_send(
     string $to,
     string $subject,
     string $body,
-    string $replyTo = ''
+    string $replyTo = '',
+    string $html = ''
 ): void {
     $host    = $cfg['host'] ?? 'smtp.hostinger.com';
     $port    = (int)($cfg['port'] ?? 465);
@@ -84,20 +85,43 @@ function smtp_send(
         $cmd('RCPT TO:<' . $to . '>', [250, 251]);
         $cmd('DATA', [354]);
 
+        $fromName = '=?UTF-8?B?' . base64_encode('موقع ابتكار') . '?=';
+
         $headers =
-            'From: ' . $user . "\r\n" .
+            'From: ' . $fromName . ' <' . $user . ">\r\n" .
             'To: ' . $to . "\r\n" .
             ($replyTo !== '' ? 'Reply-To: ' . $replyTo . "\r\n" : '') .
             'Subject: =?UTF-8?B?' . base64_encode($subject) . "?=\r\n" .
             'Date: ' . date('r') . "\r\n" .
-            "MIME-Version: 1.0\r\n" .
-            "Content-Type: text/plain; charset=UTF-8\r\n" .
-            "Content-Transfer-Encoding: base64\r\n";
+            'Message-ID: <' . bin2hex(random_bytes(12)) . '@' . ($cfg['ehlo'] ?? 'ebitkar.com') . ">\r\n" .
+            "MIME-Version: 1.0\r\n";
 
-        // ترميز base64 يتجنّب مشاكل الأسطر الطويلة والحروف العربية
-        $encodedBody = chunk_split(base64_encode($body), 76, "\r\n");
+        $b64 = fn(string $s): string => rtrim(chunk_split(base64_encode($s), 76, "\r\n"), "\r\n");
 
-        fwrite($fp, $headers . "\r\n" . $encodedBody . "\r\n.\r\n");
+        if ($html !== '') {
+            // نسختان: نص عادي لمن لا يعرض HTML، وHTML منسّق لبقية العملاء
+            $boundary = 'ebk_' . bin2hex(random_bytes(10));
+
+            $headers .= 'Content-Type: multipart/alternative; boundary="' . $boundary . "\"\r\n";
+
+            $payload =
+                "--{$boundary}\r\n" .
+                "Content-Type: text/plain; charset=\"UTF-8\"\r\n" .
+                "Content-Transfer-Encoding: base64\r\n\r\n" .
+                $b64($body) . "\r\n\r\n" .
+                "--{$boundary}\r\n" .
+                "Content-Type: text/html; charset=\"UTF-8\"\r\n" .
+                "Content-Transfer-Encoding: base64\r\n\r\n" .
+                $b64($html) . "\r\n\r\n" .
+                "--{$boundary}--\r\n";
+        } else {
+            $headers .=
+                "Content-Type: text/plain; charset=\"UTF-8\"\r\n" .
+                "Content-Transfer-Encoding: base64\r\n";
+            $payload = $b64($body) . "\r\n";
+        }
+
+        fwrite($fp, $headers . "\r\n" . $payload . ".\r\n");
         [$code, $text] = $read();
         if ($code !== 250) {
             throw new RuntimeException('data_rejected_' . $code . ': ' . substr($text, 0, 120));

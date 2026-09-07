@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
 
+mb_internal_encoding('UTF-8');
+
 const MAILBOX   = 'info@ebitkar.com';   // الوجهة
 const SENDER    = 'info@ebitkar.com';   // لا بد أن يكون على نفس النطاق وإلا رفضته الخوادم
 const MAX_LEN   = 4000;
@@ -60,16 +62,64 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 /* ── تركيب الرسالة ─────────────────────────────────────────── */
 $subject = 'طلب جديد من الموقع — ' . ($service !== '' ? $service : 'غير محدد');
 
+$when = date('Y-m-d H:i');
+$ip   = $_SERVER['REMOTE_ADDR'] ?? '—';
+$dash = '--------------------------------------';
+
+/* النسخة النصية (لعملاء البريد التي لا تعرض HTML) */
 $body = "وصلك طلب جديد من نموذج التواصل في ebitkar.com\n"
-      . str_repeat('─', 40) . "\n\n"
+      . $dash . "\n\n"
       . "الاسم:    {$name}\n"
       . "البريد:   {$email}\n"
       . "الهاتف:   " . ($phone !== '' ? $phone : '—') . "\n"
       . "الخدمة:   " . ($service !== '' ? $service : '—') . "\n\n"
       . "التفاصيل:\n{$message}\n\n"
-      . str_repeat('─', 40) . "\n"
-      . 'التاريخ:  ' . date('Y-m-d H:i') . "\n"
-      . 'IP:       ' . ($_SERVER['REMOTE_ADDR'] ?? '—') . "\n";
+      . $dash . "\n"
+      . "التاريخ:  {$when}\n"
+      . "IP:       {$ip}\n";
+
+/* النسخة المنسّقة */
+$e = fn(string $s): string => htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+
+$row = function (string $label, string $value, bool $ltr = false) use ($e): string {
+    $dir = $ltr ? ' dir="ltr"' : '';
+    return '<tr>'
+        . '<td style="padding:11px 0;border-bottom:1px solid #eee;color:#6c6c6c;font-size:13px;width:110px;vertical-align:top">'
+        . $e($label) . '</td>'
+        . '<td style="padding:11px 0;border-bottom:1px solid #eee;color:#222;font-size:15px;font-weight:600"' . $dir . '>'
+        . ($value !== '' ? $e($value) : '—') . '</td>'
+        . '</tr>';
+};
+
+$html = '<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">'
+      . '<meta name="viewport" content="width=device-width,initial-scale=1"></head>'
+      . '<body style="margin:0;padding:24px;background:#f4f4f4;'
+      . 'font-family:Tahoma,\'Segoe UI\',Arial,sans-serif;direction:rtl">'
+      . '<div style="max-width:580px;margin:0 auto;background:#fff;border-top:5px solid #f6850d">'
+      . '<div style="padding:26px 30px 8px">'
+      . '<div style="font-size:12px;letter-spacing:2px;color:#f6850d;font-weight:700">طلب جديد</div>'
+      . '<h1 style="margin:6px 0 4px;font-size:21px;color:#222">' . $e($service !== '' ? $service : 'استفسار عام') . '</h1>'
+      . '<div style="font-size:12px;color:#999">من نموذج التواصل في ebitkar.com</div>'
+      . '</div>'
+      . '<div style="padding:8px 30px 4px">'
+      . '<table style="width:100%;border-collapse:collapse">'
+      . $row('الاسم', $name)
+      . $row('البريد', $email, true)
+      . $row('الهاتف', $phone, true)
+      . $row('الخدمة', $service)
+      . '</table></div>'
+      . '<div style="padding:18px 30px 4px">'
+      . '<div style="font-size:13px;color:#6c6c6c;margin-bottom:8px">التفاصيل</div>'
+      . '<div style="background:#f9f9f9;border-inline-start:4px solid #f6850d;padding:15px 18px;'
+      . 'font-size:15px;line-height:1.85;color:#333;white-space:pre-wrap">'
+      . $e($message) . '</div></div>'
+      . '<div style="padding:20px 30px 26px">'
+      . '<a href="mailto:' . $e($email) . '" style="display:inline-block;background:#f6850d;color:#fff;'
+      . 'text-decoration:none;padding:12px 26px;border-radius:30px;font-size:14px;font-weight:700">'
+      . 'الرد على ' . $e($name) . '</a></div>'
+      . '<div style="padding:14px 30px;background:#f9f9f9;border-top:1px solid #eee;'
+      . 'font-size:11px;color:#999">' . $e($when) . ' &nbsp;·&nbsp; IP ' . $e($ip) . '</div>'
+      . '</div></body></html>';
 
 $headers = [
     'From'                      => SENDER,
@@ -98,10 +148,10 @@ $configPath = __DIR__ . '/mail-config.php';
 if (is_file($configPath)) {
     require_once __DIR__ . '/smtp-send.php';
     try {
-        smtp_send((array)require $configPath, MAILBOX, $subject, $body, $email);
+        smtp_send((array)require $configPath, MAILBOX, $subject, $body, $email, $html);
         $sent = true;
-    } catch (Throwable $e) {
-        $why = $e->getMessage();
+    } catch (Throwable $err) {   // ‏$e مستخدم أعلاه لتهريب HTML
+        $why = $err->getMessage();
     }
 } else {
     $why = 'no_config';
