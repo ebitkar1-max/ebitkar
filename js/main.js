@@ -212,36 +212,80 @@
   });
 
   /* ----------------------------------------------------------------------
-     6. Contact form  →  opens the visitor's mail client (no back end needed)
+     6. Contact form  →  posts to contact.php, falls back to the mail client
      --------------------------------------------------------------------- */
   var form = document.getElementById('contactForm');
   var ok = document.getElementById('formOk');
 
+  var MSG = {
+    sending: { ar: 'جارٍ الإرسال…', en: 'Sending…' },
+    sent:    { ar: 'وصلتنا رسالتك — سنعود إليك خلال يوم عمل واحد.',
+               en: 'Got it — we will come back to you within one working day.' },
+    tooFast: { ar: 'أرسلت رسالة للتو، انتظر قليلاً قبل إرسال أخرى.',
+               en: 'You just sent a message — please wait a moment before sending another.' },
+    failed:  { ar: 'تعذّر الإرسال. سنفتح لك برنامج البريد بدلاً من ذلك…',
+               en: 'Could not send. Opening your mail app instead…' }
+  };
+
+  function say(key, tone) {
+    var isEn = html.getAttribute('lang') === 'en';
+    ok.textContent = MSG[key][isEn ? 'en' : 'ar'];
+    ok.classList.add('on');
+    ok.classList.toggle('warn', tone === 'warn');
+  }
+
+  function mailtoFallback(d) {
+    var isEn = html.getAttribute('lang') === 'en';
+    var subject = (isEn ? 'New project brief — ' : 'طلب مشروع جديد — ') + (d.get('service') || '');
+    var body = [
+      (isEn ? 'Name: ' : 'الاسم: ') + (d.get('name') || ''),
+      (isEn ? 'Phone: ' : 'الهاتف: ') + (d.get('phone') || ''),
+      (isEn ? 'Email: ' : 'البريد: ') + (d.get('email') || ''),
+      (isEn ? 'Service: ' : 'الخدمة: ') + (d.get('service') || ''),
+      '',
+      (isEn ? 'Details:' : 'التفاصيل:'),
+      (d.get('message') || '')
+    ].join('\n');
+
+    window.location.href = 'mailto:info@ebitkar.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+  }
+
   if (form) {
+    var btn = form.querySelector('button[type="submit"]');
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
 
       var d = new FormData(form);
-      var isEn = html.getAttribute('lang') === 'en';
+      say('sending');
+      if (btn) btn.disabled = true;
 
-      var subject = (isEn ? 'New project brief — ' : 'طلب مشروع جديد — ') + (d.get('service') || '');
-      var body = [
-        (isEn ? 'Name: ' : 'الاسم: ') + (d.get('name') || ''),
-        (isEn ? 'Phone: ' : 'الهاتف: ') + (d.get('phone') || ''),
-        (isEn ? 'Email: ' : 'البريد: ') + (d.get('email') || ''),
-        (isEn ? 'Service: ' : 'الخدمة: ') + (d.get('service') || ''),
-        '',
-        (isEn ? 'Details:' : 'التفاصيل:'),
-        (d.get('message') || '')
-      ].join('\n');
-
-      window.location.href = 'mailto:info@ebitkar.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(body);
-
-      ok.classList.add('on');
-      form.reset();
+      fetch('contact.php', { method: 'POST', body: d })
+        .then(function (r) {
+          return r.json().catch(function () { throw new Error('not_json'); })
+            .then(function (data) { return { status: r.status, data: data }; });
+        })
+        .then(function (res) {
+          if (res.data && res.data.ok) {
+            say('sent');
+            form.reset();
+          } else if (res.status === 429) {
+            say('tooFast', 'warn');
+          } else {
+            throw new Error((res.data && res.data.error) || 'failed');
+          }
+        })
+        .catch(function () {
+          // no PHP, offline, or the mailer refused — hand it to the mail client
+          say('failed', 'warn');
+          mailtoFallback(d);
+        })
+        .then(function () {
+          if (btn) btn.disabled = false;
+        });
     });
   }
 

@@ -1525,3 +1525,33 @@ html[dir="rtl"] .foot-nav a::after{translate:50% 0}
   .bubble{width:44px;height:44px}
   .bubble svg{width:20px;height:20px}
 }
+
+/* ==========================================================================
+   Contact form states
+   ========================================================================== */
+
+/* honeypot — hidden from people, reachable by bots */
+.hp{
+  position:absolute;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
+}
+
+.form-ok{
+  transition:background .3s,border-color .3s,color .3s;
+}
+.form-ok.warn{
+  background:rgba(52,52,52,.06);
+  border-inline-start-color:var(--ink);
+  color:var(--ink);
+}
+.form .btn:disabled{
+  opacity:.62;
+  cursor:progress;
+  transform:none;
+}
+.form .btn:disabled::before{transform:scaleX(0)}
