@@ -35,7 +35,7 @@ let html = read('index.html');
 let body = html.slice(html.indexOf('<body>') + 6, html.indexOf('</body>'));
 
 // strip the tags that only make sense in the standalone file
-body = body.replace(/<script src="js\/main\.js"><\/script>/, '');
+body = body.replace(/<script src="js\/main\.js[^"]*"><\/script>/, '');
 
 // inline every image reference — data URIs must always be quoted
 body = body.replace(/url\((["']?)(img\/[a-z0-9.-]+)\1\)/gi,
