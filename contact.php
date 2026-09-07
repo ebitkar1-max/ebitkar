@@ -117,8 +117,8 @@ $html = '<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">'
       . '<a href="mailto:' . $e($email) . '" style="display:inline-block;background:#f6850d;color:#fff;'
       . 'text-decoration:none;padding:12px 26px;border-radius:30px;font-size:14px;font-weight:700">'
       . 'الرد على ' . $e($name) . '</a></div>'
-      . '<div style="padding:14px 30px;background:#f9f9f9;border-top:1px solid #eee;'
-      . 'font-size:11px;color:#999">' . $e($when) . ' &nbsp;·&nbsp; IP ' . $e($ip) . '</div>'
+      . '<div dir="ltr" style="padding:14px 30px;background:#f9f9f9;border-top:1px solid #eee;'
+      . 'font-size:11px;color:#999;text-align:right">' . $e($when) . ' &nbsp;·&nbsp; IP ' . $e($ip) . '</div>'
       . '</div></body></html>';
 
 $headers = [
