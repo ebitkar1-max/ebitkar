@@ -87,7 +87,13 @@ foreach ($headers as $k => $v) {
 
 $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 
-$sent = @mail(MAILBOX, $encodedSubject, $body, $headerLines, '-f' . SENDER);
+// خادم هوستنجر يستخدم hsendmail الذي يرفض المعاملات الإضافية،
+// لذا نرسل بالطريقة القياسية أولاً ثم نجرب -f كخطة بديلة.
+$sent = @mail(MAILBOX, $encodedSubject, $body, $headerLines);
+
+if (!$sent) {
+    $sent = @mail(MAILBOX, $encodedSubject, $body, $headerLines, '-f' . SENDER);
+}
 
 if (!$sent) {
     fail('send_failed', 500);
