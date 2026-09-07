@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<defs><filter id="b3" x="-30%" y="-30%" width="160%" height="160%">
+<feGaussianBlur stdDeviation="34"/></filter></defs>
+<rect width="400" height="400" fill="#5e5e5e"/>
+<g filter="url(#b3)"><circle cx="120" cy="120" r="140" fill="#8a8a8a"/><circle cx="300" cy="250" r="150" fill="#333333"/><circle cx="60" cy="300" r="100" fill="#606060"/><circle cx="340" cy="70" r="90" fill="#969696"/><circle cx="200" cy="380" r="90" fill="#282828"/></g>
+</svg>

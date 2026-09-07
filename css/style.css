@@ -406,9 +406,9 @@ html[dir="ltr"] .wedge-teeth{
   inset-inline-end:calc(100% + 104px);
   transform-origin:top left;
   transform:rotate(58deg);
-  font-size:12px;
-  letter-spacing:1px;
-  color:rgba(255,255,255,.42);
+  font-size:13.5px;
+  letter-spacing:1.4px;
+  color:rgba(255,255,255,.72);
   white-space:nowrap;
   pointer-events:none;
 }
@@ -491,48 +491,53 @@ html[dir="ltr"] .hero-quote{left:auto;right:4%}
   width:var(--d);height:var(--d);
   display:grid;place-items:center;
   transform:rotate(45deg);
-  background:linear-gradient(140deg,#a2a2a2,#454545);
-  /* the tile is rotated 45deg, so an 8/8 local offset falls straight down
-     on screen — that keeps the light source consistent across the cluster */
+  background:#8c8c8c center/cover no-repeat;
+  border:1px solid rgba(255,255,255,.4);
+  /* rotated 45deg, so a 7/7 local offset falls straight down on screen */
   box-shadow:
-    inset 1px 1px 0 rgba(255,255,255,.3),
-    inset -1px -1px 0 rgba(0,0,0,.4),
-    7px 7px 12px rgba(0,0,0,.4),
-    14px 14px 30px rgba(0,0,0,.26);
+    inset 1px 1px 0 rgba(255,255,255,.45),
+    inset -1px -1px 0 rgba(0,0,0,.3),
+    7px 7px 14px rgba(0,0,0,.4),
+    14px 14px 32px rgba(0,0,0,.28);
   overflow:hidden;
-  transition:transform .45s var(--ease),box-shadow .4s,background .4s;
+  transition:transform .45s var(--ease),box-shadow .4s,border-color .4s;
 }
+.dia-1{background-image:url('../img/tile-1.svg')}
+.dia-2{background-image:url('../img/tile-2.svg')}
+.dia-3{background-image:url('../img/tile-3.svg')}
+.dia-4{background-image:url('../img/tile-4.svg')}
 /* bevel sheen, light falling from the upper-left facet */
 .dia::after{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,.2) 0%,rgba(255,255,255,.05) 40%,rgba(0,0,0,.12) 100%);
+  background:linear-gradient(135deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,.06) 45%,rgba(0,0,0,.14) 100%);
   pointer-events:none;
 }
 .dia::before{
   content:'';position:absolute;inset:0;
-  background:url('../img/doodles.svg') repeat;
-  background-size:300px auto;
-  opacity:.16;
-  filter:invert(1);
+  background:
+    radial-gradient(62% 44% at 50% 50%,rgba(0,0,0,.5) 0%,rgba(0,0,0,.24) 58%,rgba(0,0,0,0) 100%),
+    rgba(255,255,255,.14);
+  transition:background .4s;
 }
 .dia span{
-  position:relative;z-index:1;
+  position:relative;z-index:2;
   transform:rotate(-45deg);
   font-size:clamp(12px,1.05vw,15px);
   font-weight:500;color:#fff;
-  text-shadow:0 1px 6px rgba(0,0,0,.5);
+  text-shadow:0 1px 3px rgba(0,0,0,.65),0 0 14px rgba(0,0,0,.4);
   white-space:nowrap;
 }
 .dia:hover{
-  background:linear-gradient(140deg,var(--orange-2),var(--orange-dk));
   transform:rotate(45deg) scale(1.1) translate(-3px,-3px);
+  border-color:rgba(255,255,255,.75);
   box-shadow:
-    inset 1px 1px 0 rgba(255,255,255,.4),
-    inset -1px -1px 0 rgba(0,0,0,.25),
-    11px 11px 16px rgba(0,0,0,.34),
-    20px 20px 42px rgba(246,133,13,.34);
+    inset 1px 1px 0 rgba(255,255,255,.55),
+    inset -1px -1px 0 rgba(0,0,0,.2),
+    11px 11px 18px rgba(0,0,0,.34),
+    20px 20px 44px rgba(246,133,13,.4);
   z-index:3;
 }
+.dia:hover::before{background:rgba(246,133,13,.55)}
 .dia-1{inset-inline-start:calc(var(--d) * .2);top:calc(var(--d) * 1.05)}
 .dia-2{inset-inline-start:calc(var(--d) * 1.09);top:calc(var(--d) * .15)}
 .dia-3{inset-inline-start:calc(var(--d) * 1.98);top:calc(var(--d) * 1.05)}
