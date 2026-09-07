@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ابتكار للحلول الذكية | تصميم مواقع وتطبيقات وتسويق رقمي</title>
+<meta name="description" content="ابتكار للحلول الذكية — شركة متخصصة في تصميم وبرمجة المواقع، تطبيقات الموبايل، الأنظمة والبرمجيات المخصصة، والتسويق الرقمي.">
+<meta name="theme-color" content="#f6850d">
+<link rel="icon" type="image/png" href="img/icon-orange.png">
+<link rel="apple-touch-icon" href="img/icon-orange.png">
+<link rel="canonical" href="https://ebitkar.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ebitkar.com/">
+<meta property="og:title" content="ابتكار للحلول الذكية | Ebitkar Smart Solutions">
+<meta property="og:description" content="تصميم وبرمجة المواقع، تطبيقات الموبايل، الأنظمة المخصصة، والتسويق الرقمي.">
+<meta property="og:image" content="https://ebitkar.com/img/icon-orange.png">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:locale:alternate" content="en_US">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.rv{opacity:1!important;transform:none!important}.hero-logo,.hero-tag,.hero-links li{opacity:1!important;transform:none!important}.hero-links a::before{transform:scaleX(1)!important}</style></noscript>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"ابتكار للحلول الذكية",
+  "alternateName":"Ebitkar Smart Solutions",
+  "url":"https://ebitkar.com",
+  "logo":"https://ebitkar.com/img/logo-dark.png",
+  "email":"info@ebitkar.com",
+  "description":"تصميم وبرمجة المواقع، تطبيقات الموبايل، الأنظمة والبرمجيات المخصصة، والتسويق الرقمي.",
+  "areaServed":"EG",
+  "knowsLanguage":["ar","en"]
+}
+</script>
+</head>
+<body>
+
+<!-- ══════════ sticky top bar (appears on scroll) ══════════ -->
+<div class="topbar" id="topbar">
+  <div class="tb-in">
+    <a class="tb-logo" href="#top" aria-label="ابتكار" data-en-aria="Ebitkar">
+      <img src="img/logo-dark.png" alt="ابتكار للحلول الذكية" width="472" height="263">
+    </a>
+
+    <div class="tb-current">
+      <button type="button" class="tb-arrow" id="tbPrev" aria-label="القسم السابق" data-en-aria="Previous section">
+        <svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg>
+      </button>
+      <span class="tb-name" id="tbName">الرئيسية</span>
+      <button type="button" class="tb-arrow" id="tbNext" aria-label="القسم التالي" data-en-aria="Next section">
+        <svg viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg>
+      </button>
+    </div>
+
+    <nav class="tb-nav" aria-label="التنقل" data-en-aria="Navigation">
+      <a href="#about" data-en="About">من نحن</a>
+      <a href="#services" data-en="What We Do">خدماتنا</a>
+      <a href="#work" data-en="Portfolio">أعمالنا</a>
+      <a href="#contact" data-en="Contact">تواصل معنا</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ══════════ quick contact bubbles ══════════ -->
+<div class="bubbles">
+  <a class="bubble" href="tel:+201000000000" aria-label="اتصل بنا" data-en-aria="Call us">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+    <span class="tip" data-en="Call us">اتصل بنا</span>
+  </a>
+  <a class="bubble" href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="واتساب" data-en-aria="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1s-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.4 1.9.8 2.6.9 3.5.7.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+    <span class="tip" data-en="WhatsApp">واتساب</span>
+  </a>
+  <a class="bubble" href="mailto:info@ebitkar.com" aria-label="راسلنا" data-en-aria="Email us">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
+    <span class="tip" data-en="Email us">راسلنا</span>
+  </a>
+</div>
+
+<!-- ══════════ language switch ══════════ -->
+<div class="lang-switch" role="group" aria-label="Language">
+  <button type="button" data-lang="ar" class="on">ع</button>
+  <button type="button" data-lang="en">EN</button>
+</div>
+
+<!-- ══════════ burger + quick menu ══════════ -->
+<button class="burger" id="burger" aria-label="القائمة" data-en-aria="Menu" aria-expanded="false" aria-controls="quickMenu">
+  <span></span><span></span><span></span>
+</button>
+
+<div class="scrim" id="scrim"></div>
+
+<nav class="quick-menu" id="quickMenu" aria-label="القائمة الرئيسية" data-en-aria="Main menu">
+  <ul>
+    <li><a href="#top" data-en="Home">الرئيسية</a></li>
+    <li><a href="#about" data-en="About Us">من نحن</a></li>
+    <li><a href="#services" data-en="What We Do">خدماتنا</a></li>
+    <li><a href="#work" data-en="Our Work">أعمالنا</a></li>
+    <li><a href="#process" data-en="How We Work">كيف نعمل</a></li>
+    <li><a href="#testimonials" data-en="Testimonials">آراء العملاء</a></li>
+    <li><a href="#team" data-en="The Team">الفريق</a></li>
+    <li><a href="#contact" data-en="Contact">تواصل معنا</a></li>
+  </ul>
+  <div class="menu-foot shell">
+    <a href="mailto:info@ebitkar.com">info@ebitkar.com</a>
+    <span>·</span>
+    <a href="tel:+201000000000" dir="ltr">+20 100 000 0000</a>
+    <span>·</span>
+    <span data-en="Cairo, Egypt">القاهرة، مصر</span>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero" id="top">
+  <div class="doodles" aria-hidden="true"></div>
+  <div class="sash" aria-hidden="true"></div>
+  <div class="veil" aria-hidden="true"></div>
+
+  <!-- big charcoal diagonal -->
+  <div class="hero-wedge" aria-hidden="true">
+    <span class="wedge-teeth"></span>
+    <span class="wedge-label" data-en="we look at things from a different angle">ننظر إلى الأمور من زاوية مختلفة</span>
+  </div>
+
+  <!-- angled phone / email bars -->
+  <div class="hero-contact">
+    <a class="hc-phone" href="tel:+201000000000" dir="ltr">+20 100 000 0000</a>
+    <a class="hc-mail" href="mailto:info@ebitkar.com" dir="ltr">info@ebitkar.com</a>
+  </div>
+
+  <blockquote class="hero-quote">
+    <span data-en="A good idea starts with one simple question: <b>how do we make this easier?</b>">
+      الفكرة الجيدة تبدأ بسؤال بسيط واحد: <b>كيف نجعل هذا أسهل؟</b>
+    </span>
+  </blockquote>
+
+  <div class="hero-inner shell">
+    <div class="hero-main">
+      <h1 class="hero-logo">
+        <img src="img/logo-dark.png" alt="ابتكار للحلول الذكية — Ebitkar Smart Solutions" width="472" height="263">
+      </h1>
+
+      <p class="hero-tag" data-en="Websites &amp; Mobile Apps, Custom Software and <b>Digital Marketing</b>">
+        تصميم وبرمجة المواقع والتطبيقات، الأنظمة المخصّصة و<b>التسويق الرقمي</b>
+      </p>
+
+      <ul class="hero-links">
+        <li><a href="#services" data-en="bespoke websites">تصميم وبرمجة المواقع</a></li>
+        <li><a href="#services" data-en="mobile applications">تطبيقات الموبايل</a></li>
+        <li><a href="#services" data-en="custom software &amp; systems">أنظمة وبرمجيات مخصّصة</a></li>
+        <li><a href="#services" data-en="digital marketing">التسويق الرقمي</a></li>
+      </ul>
+
+      <div class="cue" aria-hidden="true"><span></span></div>
+    </div>
+
+    <!-- diamond navigation cluster -->
+    <nav class="diamonds" aria-label="أقسام الموقع" data-en-aria="Site sections">
+      <span class="dia-label" data-en="navigate">تصفّح</span>
+      <a class="dia dia-1" href="#about"><span data-en="About">من نحن</span></a>
+      <a class="dia dia-2" href="#services"><span data-en="What We Do">خدماتنا</span></a>
+      <a class="dia dia-3" href="#work"><span data-en="Portfolio">أعمالنا</span></a>
+      <a class="dia dia-4" href="#contact"><span data-en="Contact">تواصل</span></a>
+    </nav>
+  </div>
+
+  <div class="hero-strip">
+    <div class="shell">
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.2-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.9s0-3.5.1-4.8C2.3 4 3.8 2.4 7.1 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 4.9a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8zm0 8a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.1-9.4a1.2 1.2 0 1 0 0 2.3 1.2 1.2 0 0 0 0-2.3z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.9 8.5H3.8V21h3.1V8.5zM5.3 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM21 21h-3.1v-6.1c0-1.5-.5-2.5-1.8-2.5-1 0-1.6.7-1.8 1.3-.1.2-.1.6-.1.9V21h-3.1V8.5h3.1v1.8a3.1 3.1 0 0 1 2.8-1.6c2 0 4 1.4 4 4.3V21z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.2L5.6 21h-3l7-8-6.8-10h6.1l4.3 5.7L17.5 3zm-1 16.2h1.6L7.6 4.7H5.8l10.7 14.5z"/></svg></a>
+        <a href="#" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M8.9 5.5c1.9 0 3.4.8 3.4 2.9 0 1.2-.6 1.9-1.5 2.4 1.3.4 2 1.4 2 2.9 0 2.4-2 3.3-4 3.3H2V5.5h6.9zM5 9.9h3.3c.9 0 1.4-.4 1.4-1.2S9.2 7.5 8.3 7.5H5v2.4zm0 4.9h3.5c1 0 1.7-.4 1.7-1.4s-.7-1.4-1.7-1.4H5v2.8zM19 15c.7 0 1.4-.4 1.6-1.1h2.1c-.5 1.9-2 2.9-3.8 2.9-2.6 0-4.3-1.8-4.3-4.4s1.8-4.4 4.3-4.4c2.8 0 4.2 2.3 4 4.9h-6c.1 1.3.8 2.1 2.1 2.1zm1.9-3.5c-.1-1.1-.8-1.7-1.8-1.7s-1.9.6-2.1 1.7h3.9zM15.5 6.3h4.9v1.3h-4.9V6.3z"/></svg></a>
+      </div>
+
+      <div class="strip-links">
+        <a href="#about" data-en="About">من نحن</a><span class="sep">·</span>
+        <a href="#services" data-en="Services">الخدمات</a><span class="sep">·</span>
+        <a href="#work" data-en="Work">أعمالنا</a><span class="sep">·</span>
+        <a href="#contact" data-en="Contact">تواصل</a>
+      </div>
+
+      <div class="strip-copy">
+        <span data-en="Copyright">حقوق النشر</span> &copy; <span id="yr">2026</span> ebitkar.com
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section class="sec sec-ink zig zig-bot-paper" id="about">
+  <div class="watermark" aria-hidden="true"></div>
+  <div class="hatch" aria-hidden="true"></div>
+  <span class="rot rot-start rot-diag" data-en="about us">من نحن</span>
+
+  <div class="shell">
+    <div class="about-grid">
+      <div class="about-copy">
+        <span class="eyebrow rv" data-en="What makes us different">ما الذي يميّزنا</span>
+        <h2 class="sec-title rv rv-d1" data-en="We build the digital tools your business actually needs">
+          نبني الأدوات الرقمية التي يحتاجها عملك فعلاً
+        </h2>
+        <p class="rv rv-d2" data-en="Turning a business objective into a working digital product is quite possibly our favourite thing to do. We start from your goals — not from a template.">
+          تحويل هدف تجاري إلى منتج رقمي يعمل على أرض الواقع هو على الأرجح أكثر ما نستمتع بفعله. نبدأ من أهدافك أنت، لا من قالب جاهز.
+        </p>
+        <p class="rv rv-d2" data-en="While other companies will try to win you over with slick visuals alone, at Ebitkar you get the whole package: bespoke design, solid engineering, and continuous development that keeps your business standing out online.">
+          بينما تحاول شركات أخرى إبهارك بالتصميم وحده، نقدّم لك في ابتكار الحزمة الكاملة: تصميم مخصّص، برمجة قوية، وتطوير مستمر يبقي عملك متميّزاً على الإنترنت.
+        </p>
+        <p class="rv rv-d3" data-en="Why over-complicate things — it really is that simple.">
+          لماذا نعقّد الأمور؟ إنها بهذه البساطة فعلاً.
+        </p>
+        <a href="#services" class="btn rv rv-d3">
+          <span data-en="See More">اعرف المزيد</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 7.4L12 18l5-5H5z"/></svg>
+        </a>
+      </div>
+
+      <div class="about-marks rv rv-d2">
+        <div class="mark"><b>+120</b><span data-en="Projects delivered">مشروع منجز</span></div>
+        <div class="mark"><b>+80</b><span data-en="Happy clients">عميل سعيد</span></div>
+        <div class="mark"><b>+9</b><span data-en="Years of experience">سنوات خبرة</span></div>
+        <div class="mark"><b>24/7</b><span data-en="Technical support">دعم فني</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SERVICES ══════════ -->
+<section class="sec sec-paper" id="services">
+  <div class="watermark" aria-hidden="true"></div>
+  <div class="hatch" aria-hidden="true"></div>
+  <span class="rot rot-end" data-en="what we do">خدماتنا</span>
+
+  <div class="shell">
+    <span class="eyebrow rv" data-en="What we do">خدماتنا</span>
+    <h2 class="sec-title rv rv-d1" data-en="Four things, done properly">أربع خدمات… نتقنها جيداً</h2>
+    <p class="sec-lead rv rv-d1" data-en="From the first sketch to launch day and everything after it — design, code, and growth under one roof.">
+      من أول رسم تخطيطي وحتى يوم الإطلاق وما بعده — تصميم وبرمجة ونمو تحت سقف واحد.
+    </p>
+
+    <div class="svc-grid">
+      <article class="svc cut rv rv-d1">
+        <div class="svc-ico"><span><svg viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="32" rx="3"/><path d="M4 17h40M11 12.5h.01M16 12.5h.01M21 12.5h.01"/><path d="M12 24h9v10h-9zM27 24h10M27 29h10M27 34h6"/></svg></span></div>
+        <h3 data-en="Web Design &amp; Development">تصميم وبرمجة المواقع</h3>
+        <p data-en="Bespoke, fast, responsive websites and web platforms — built to your brand, not cut from a template.">
+          مواقع ومنصات ويب مخصّصة وسريعة ومتجاوبة مع كل الشاشات — مبنية على هوية علامتك، لا مقصوصة من قالب.
+        </p>
+        <ul>
+          <li data-en="Corporate sites">مواقع الشركات</li>
+          <li data-en="E-commerce">متاجر إلكترونية</li>
+          <li data-en="Landing pages">صفحات هبوط</li>
+          <li data-en="SEO ready">جاهزة للسيو</li>
+        </ul>
+      </article>
+
+      <article class="svc cut rv rv-d2">
+        <div class="svc-ico"><span><svg viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="40" rx="3"/><path d="M20 8h8M24 39h.01"/><path d="M18 14h12v9H18z"/><path d="M18 28h12M18 33h8"/></svg></span></div>
+        <h3 data-en="Mobile Applications">تطبيقات الموبايل</h3>
+        <p data-en="Native and cross-platform apps for iOS and Android, designed around how people really use their phones.">
+          تطبيقات أصلية ومتعددة المنصات لأنظمة iOS و Android، مصمّمة حول الطريقة التي يستخدم بها الناس هواتفهم فعلاً.
+        </p>
+        <ul>
+          <li>iOS &amp; Android</li>
+          <li>Flutter</li>
+          <li data-en="UI / UX">تصميم الواجهات</li>
+          <li data-en="Store publishing">النشر على المتاجر</li>
+        </ul>
+      </article>
+
+      <article class="svc cut rv rv-d3">
+        <div class="svc-ico"><span><svg viewBox="0 0 48 48"><path d="M17 14 7 24l10 10M31 14l10 10-10 10M27 9l-6 30"/></svg></span></div>
+        <h3 data-en="Custom Software &amp; Systems">أنظمة وبرمجيات مخصّصة</h3>
+        <p data-en="ERP, CRM, dashboards and internal tools that fit your workflow instead of forcing you to fit theirs.">
+          أنظمة ERP و CRM ولوحات تحكم وأدوات داخلية تناسب طريقة عملك، بدلاً من أن تُجبرك على التأقلم معها.
+        </p>
+        <ul>
+          <li>ERP / CRM</li>
+          <li data-en="Dashboards">لوحات تحكم</li>
+          <li data-en="APIs &amp; integrations">تكاملات وواجهات</li>
+          <li data-en="Automation">أتمتة</li>
+        </ul>
+      </article>
+
+      <article class="svc cut rv rv-d4">
+        <div class="svc-ico"><span><svg viewBox="0 0 48 48"><path d="M6 20v8a3 3 0 0 0 3 3h6l16 9V8L15 17H9a3 3 0 0 0-3 3z"/><path d="M38 17a10 10 0 0 1 0 14M15 31l3 11h6l-2-11"/></svg></span></div>
+        <h3 data-en="Digital Marketing">التسويق الرقمي</h3>
+        <p data-en="Campaigns, content and search visibility that bring the right people to what you just built.">
+          حملات ومحتوى وظهور في نتائج البحث تجلب الأشخاص المناسبين إلى ما بنيناه للتو.
+        </p>
+        <ul>
+          <li>SEO</li>
+          <li data-en="Paid ads">إعلانات ممولة</li>
+          <li data-en="Social media">سوشيال ميديا</li>
+          <li data-en="Content">محتوى</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SPOTLIGHT — bespoke websites ══════════ -->
+<section class="sec sec-paper-2 spotlight" id="spotlight">
+  <div class="slab slab-start" aria-hidden="true"></div>
+  <span class="teeth" aria-hidden="true"></span>
+  <span class="rot rot-start rot-diag" data-en="bespoke websites">مواقع مخصّصة</span>
+
+  <div class="shell spot-grid">
+    <div class="spot-art rv">
+      <span class="spot-tab" data-en="Latest work">أحدث الأعمال</span>
+      <img src="img/work-1.svg" alt="" width="800" height="600" loading="lazy">
+      <span class="spot-badge" data-en="Click here">شاهد التفاصيل</span>
+    </div>
+
+    <div class="spot-copy">
+      <h2 class="sec-title rv" data-en="Websites built the long way round">مواقع مبنية بالطريقة الصحيحة</h2>
+      <p class="rv rv-d1" data-en="Every site starts as a blank page and a conversation about your business — never as a purchased theme with your logo dropped on top.">
+        كل موقع يبدأ من صفحة بيضاء ومن حوار حول طبيعة عملك — وليس من قالب جاهز نضع شعارك فوقه.
+      </p>
+      <ul class="tri-list rv rv-d2">
+        <li><b data-en="Unique, bespoke design">تصميم فريد ومخصّص</b><span data-en="Drawn for your brand, approved by you before any code is written.">مرسوم لهويتك، وتعتمده أنت قبل كتابة أي كود.</span></li>
+        <li><b data-en="Solid, tested development">برمجة قوية ومُختبرة</b><span data-en="Fast, secure and search-engine friendly from day one.">سريعة وآمنة وصديقة لمحركات البحث من اليوم الأول.</span></li>
+        <li><b data-en="Content system you control">نظام تحكّم بين يديك</b><span data-en="Update text, images and products yourself — no developer needed.">حدّث النصوص والصور والمنتجات بنفسك دون الحاجة لمبرمج.</span></li>
+      </ul>
+      <a href="#contact" class="btn rv rv-d3">
+        <span data-en="Start a project">ابدأ مشروعك</span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 7.4L12 18l5-5H5z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WORK ══════════ -->
+<section class="sec sec-ink zig zig-top-paper zig-bot-paper" id="work">
+  <div class="watermark" aria-hidden="true"></div>
+  <div class="hatch" aria-hidden="true"></div>
+  <span class="rot rot-end rot-diag" data-en="portfolio">أعمالنا</span>
+
+  <div class="shell">
+    <span class="eyebrow rv" data-en="Our work">أعمالنا</span>
+    <h2 class="sec-title rv rv-d1" data-en="A few things we shipped">نماذج من مشاريعنا</h2>
+    <p class="sec-lead rv rv-d1" data-en="Different industries, one standard of finish.">
+      مجالات مختلفة… ومعيار واحد في الإتقان.
+    </p>
+
+    <div class="work-grid">
+      <a class="work cut rv rv-d1" href="#contact">
+        <span class="art" style="background-image:url(img/work-1.svg)" aria-hidden="true"></span>
+        <span class="cat" data-en="E-commerce">متجر إلكتروني</span>
+        <h3 data-en="Retail store platform">منصة متجر تجزئة</h3>
+        <span class="go" data-en="View project">استعرض المشروع</span>
+      </a>
+      <a class="work cut rv rv-d2" href="#contact">
+        <span class="art" style="background-image:url(img/work-2.svg)" aria-hidden="true"></span>
+        <span class="cat" data-en="Mobile app">تطبيق موبايل</span>
+        <h3 data-en="Delivery &amp; tracking app">تطبيق توصيل وتتبّع</h3>
+        <span class="go" data-en="View project">استعرض المشروع</span>
+      </a>
+      <a class="work cut rv rv-d3" href="#contact">
+        <span class="art" style="background-image:url(img/work-3.svg)" aria-hidden="true"></span>
+        <span class="cat" data-en="Custom system">نظام مخصّص</span>
+        <h3 data-en="Clinic management system">نظام إدارة عيادات</h3>
+        <span class="go" data-en="View project">استعرض المشروع</span>
+      </a>
+      <a class="work cut rv rv-d1" href="#contact">
+        <span class="art" style="background-image:url(img/work-4.svg)" aria-hidden="true"></span>
+        <span class="cat" data-en="Corporate site">موقع شركة</span>
+        <h3 data-en="Contracting company site">موقع شركة مقاولات</h3>
+        <span class="go" data-en="View project">استعرض المشروع</span>
+      </a>
+      <a class="work cut rv rv-d2" href="#contact">
+        <span class="art" style="background-image:url(img/work-5.svg)" aria-hidden="true"></span>
+        <span class="cat" data-en="Digital marketing">تسويق رقمي</span>
+        <h3 data-en="Restaurant chain campaign">حملة سلسلة مطاعم</h3>
+        <span class="go" data-en="View project">استعرض المشروع</span>
+      </a>
+      <a class="work cut rv rv-d3" href="#contact">
+        <span class="art" style="background-image:url(img/work-6.svg)" aria-hidden="true"></span>
+        <span class="cat" data-en="Dashboard">لوحة تحكم</span>
+        <h3 data-en="Logistics operations panel">لوحة عمليات لوجستية</h3>
+        <span class="go" data-en="View project">استعرض المشروع</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROCESS ══════════ -->
+<section class="sec sec-paper-2" id="process">
+  <div class="watermark" aria-hidden="true"></div>
+  <div class="hatch" aria-hidden="true"></div>
+  <span class="rot rot-start" data-en="how we work">كيف نعمل</span>
+
+  <div class="shell">
+    <span class="eyebrow rv" data-en="How we work">كيف نعمل</span>
+    <h2 class="sec-title rv rv-d1" data-en="Four steps, no surprises">أربع خطوات… بلا مفاجآت</h2>
+    <p class="sec-lead rv rv-d1" data-en="You always know where the project stands and what happens next.">
+      تعرف دائماً أين وصل المشروع وما هي الخطوة التالية.
+    </p>
+
+    <div class="steps">
+      <div class="step rv rv-d1">
+        <div class="no"><span>1</span></div>
+        <h3 data-en="Discovery">الاستكشاف</h3>
+        <p data-en="We listen to your goals, study your audience and your competitors, then agree on scope.">
+          نستمع إلى أهدافك، ندرس جمهورك ومنافسيك، ثم نتفق على نطاق العمل.
+        </p>
+      </div>
+      <div class="step rv rv-d2">
+        <div class="no"><span>2</span></div>
+        <h3 data-en="Design">التصميم</h3>
+        <p data-en="Wireframes first, then a full visual identity for the product — reviewed with you before a single line of code.">
+          مخططات أولية، ثم هوية بصرية كاملة للمنتج — نراجعها معك قبل كتابة أي سطر برمجي.
+        </p>
+      </div>
+      <div class="step rv rv-d3">
+        <div class="no"><span>3</span></div>
+        <h3 data-en="Build">التنفيذ</h3>
+        <p data-en="Clean, tested code delivered in short cycles, with a live preview you can follow at any time.">
+          كود نظيف ومُختبر يُسلَّم على دفعات قصيرة، مع نسخة تجريبية يمكنك متابعتها في أي وقت.
+        </p>
+      </div>
+      <div class="step rv rv-d4">
+        <div class="no"><span>4</span></div>
+        <h3 data-en="Launch &amp; grow">الإطلاق والنمو</h3>
+        <p data-en="We deploy, monitor, and keep improving — support and marketing don't stop at launch day.">
+          ننشر ونراقب ونحسّن باستمرار — الدعم والتسويق لا يتوقفان عند يوم الإطلاق.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section class="sec sec-ink zig zig-top-paper zig-bot-paper" id="testimonials">
+  <div class="watermark" aria-hidden="true"></div>
+  <div class="hatch" aria-hidden="true"></div>
+  <span class="rot rot-start rot-diag" data-en="testimonials">آراء العملاء</span>
+
+  <div class="shell">
+    <span class="eyebrow rv" data-en="Testimonials">آراء العملاء</span>
+    <h2 class="sec-title rv rv-d1" data-en="What our clients say">ماذا يقول عملاؤنا</h2>
+
+    <div class="quotes rv rv-d2" id="quotes">
+      <figure class="quote on">
+        <blockquote data-en="They didn't just build us a website — they understood the business first. Online orders went up within the first two months.">
+          لم يبنوا لنا موقعاً فحسب — بل فهموا طبيعة العمل أولاً. ارتفعت الطلبات عبر الإنترنت خلال أول شهرين.
+        </blockquote>
+        <figcaption>
+          <cite data-en="Ahmed Mahmoud">أحمد محمود</cite>
+          <small data-en="General Manager · Retail chain">المدير العام · سلسلة تجزئة</small>
+        </figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote data-en="The app was delivered on the agreed date, and every note we raised was handled without arguments. Rare, honestly.">
+          سُلِّم التطبيق في الموعد المتفق عليه، وكل ملاحظة أبديناها عولجت دون جدال. أمر نادر بصراحة.
+        </blockquote>
+        <figcaption>
+          <cite data-en="Mona Saeed">منى سعيد</cite>
+          <small data-en="Operations Manager · Delivery service">مدير العمليات · خدمة توصيل</small>
+        </figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote data-en="Our internal system used to be five spreadsheets. Now it's one dashboard the whole team actually uses.">
+          كان نظامنا الداخلي عبارة عن خمسة ملفات إكسل. الآن أصبح لوحة تحكم واحدة يستخدمها الفريق بالكامل.
+        </blockquote>
+        <figcaption>
+          <cite data-en="Khaled Al-Ansari">خالد الأنصاري</cite>
+          <small data-en="Founder · Logistics company">مؤسس · شركة لوجستيات</small>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="dots" id="dots" role="tablist" aria-label="آراء العملاء"></div>
+  </div>
+</section>
+
+<!-- ══════════ TEAM — diamond strip ══════════ -->
+<section class="sec sec-paper team" id="team">
+  <div class="hatch" aria-hidden="true"></div>
+  <span class="rot rot-end" data-en="meet the team">تعرّف على الفريق</span>
+
+  <div class="shell">
+    <span class="eyebrow rv" data-en="Meet the team">فريق العمل</span>
+    <h2 class="sec-title rv rv-d1" data-en="The people behind the pixels">الأشخاص خلف كل بكسل وسطر كود</h2>
+    <p class="sec-lead rv rv-d1" data-en="A small, senior team — you talk to the people who actually do the work.">
+      فريق صغير ومتمرّس — تتحدث مباشرةً مع من ينفّذون العمل فعلاً.
+    </p>
+
+    <div class="team-strip rv rv-d2">
+      <div class="tm">
+        <span class="dmd tm-face"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+        <b data-en="Design">التصميم</b>
+        <small data-en="UI / UX &amp; brand">واجهات وهوية</small>
+      </div>
+      <div class="tm">
+        <span class="dmd tm-face"><svg viewBox="0 0 24 24"><path d="m8 6-6 6 6 6M16 6l6 6-6 6M14 3l-4 18"/></svg></span>
+        <b data-en="Development">البرمجة</b>
+        <small data-en="Web, mobile &amp; systems">ويب وموبايل وأنظمة</small>
+      </div>
+      <div class="tm">
+        <span class="dmd tm-face"><svg viewBox="0 0 24 24"><path d="M3 11v3a2 2 0 0 0 2 2h3l8 5V4L8 9H5a2 2 0 0 0-2 2z"/><path d="M19 8a7 7 0 0 1 0 8"/></svg></span>
+        <b data-en="Marketing">التسويق</b>
+        <small data-en="SEO, ads &amp; content">سيو وإعلانات ومحتوى</small>
+      </div>
+      <div class="tm">
+        <span class="dmd tm-face"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5zM3 16l9 5 9-5M3 12l9 5 9-5"/></svg></span>
+        <b data-en="Support">الدعم</b>
+        <small data-en="Hosting &amp; maintenance">استضافة وصيانة</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section class="sec sec-paper contact" id="contact">
+  <div class="hatch" aria-hidden="true"></div>
+  <div class="slab slab-wide" aria-hidden="true"></div>
+  <span class="teeth" aria-hidden="true"></span>
+  <span class="rot rot-diag contact-rot" data-en="we look at things from a different angle">ننظر إلى الأمور من زاوية مختلفة</span>
+
+  <div class="shell contact-grid">
+    <div class="contact-form-col">
+      <span class="eyebrow rv" data-en="Contact">تواصل معنا</span>
+      <h2 class="sec-title rv rv-d1" data-en="Require our services?">هل تحتاج خدماتنا؟</h2>
+      <p class="sec-lead rv rv-d1" data-en="Send a short brief and we'll come back within one working day with a clear plan and an honest estimate.">
+        أرسل ملخصاً قصيراً وسنعود إليك خلال يوم عمل واحد بخطة واضحة وتقدير صادق للتكلفة.
+      </p>
+
+      <form class="form rv rv-d2" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name" data-en="Full name">الاسم بالكامل</label>
+            <input id="f-name" name="name" type="text" required placeholder="محمد أحمد" data-en-placeholder="John Smith">
+          </div>
+          <div class="field">
+            <label for="f-phone" data-en="Phone">رقم الهاتف</label>
+            <input id="f-phone" name="phone" type="tel" dir="ltr" placeholder="+20 1xx xxx xxxx" data-en-placeholder="+20 1xx xxx xxxx">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-mail" data-en="Email">البريد الإلكتروني</label>
+          <input id="f-mail" name="email" type="email" required dir="ltr" placeholder="you@company.com" data-en-placeholder="you@company.com">
+        </div>
+
+        <div class="field">
+          <label for="f-svc" data-en="Service required">الخدمة المطلوبة</label>
+          <select id="f-svc" name="service">
+            <option data-en="Web design &amp; development">تصميم وبرمجة موقع</option>
+            <option data-en="Mobile application">تطبيق موبايل</option>
+            <option data-en="Custom software / system">نظام أو برنامج مخصّص</option>
+            <option data-en="Digital marketing">تسويق رقمي</option>
+            <option data-en="Something else">شيء آخر</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-msg" data-en="Project details">تفاصيل المشروع</label>
+          <textarea id="f-msg" name="message" required placeholder="اكتب فكرة مشروعك باختصار…" data-en-placeholder="Describe your project briefly…"></textarea>
+        </div>
+
+        <button class="btn" type="submit">
+          <span data-en="Request a callback">اطلب مكالمة</span>
+          <svg viewBox="0 0 24 24"><path d="m2 21 21-9L2 3v7l15 2-15 2v7z"/></svg>
+        </button>
+
+        <div class="form-ok" id="formOk" role="status" data-en="Thanks! Your message is ready to send from your mail app.">
+          شكراً لك! رسالتك جاهزة للإرسال من برنامج البريد لديك.
+        </div>
+      </form>
+    </div>
+
+    <ul class="contact-dark-col">
+      <li>
+        <a href="tel:+201000000000">
+          <span class="ring"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2c1.1.4 2.3.6 3.6.6a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.6 3.6a1 1 0 0 1-.2 1z"/></svg></span>
+          <span class="ring-txt" dir="ltr">+20 100 000 0000</span>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:info@ebitkar.com">
+          <span class="ring"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 9.5a4 4 0 1 0 .5 5c-.6 1-2 1-2-.5V9"/></svg></span>
+          <span class="ring-txt" dir="ltr">info@ebitkar.com</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://wa.me/201000000000" target="_blank" rel="noopener">
+          <span class="ring"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.4A8.5 8.5 0 1 1 8 20.2z"/><path d="M8.6 9.2c.4 3 2.9 5.4 5.8 5.9"/></svg></span>
+          <span class="ring-txt" dir="ltr">WhatsApp</span>
+        </a>
+      </li>
+      <li>
+        <span class="ring-plain">
+          <b data-en="Cairo, Egypt">القاهرة، مصر</b>
+          <small data-en="Sun – Thu · 9:00 – 18:00">الأحد – الخميس · ٩:٠٠ – ١٨:٠٠</small>
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="foot zig zig-top-paper">
+  <div class="hatch" aria-hidden="true"></div>
+  <div class="shell">
+    <div class="foot-top">
+      <img class="foot-logo" src="img/logo-light.png" alt="ابتكار للحلول الذكية" width="472" height="263" loading="lazy">
+
+      <nav class="foot-nav" aria-label="روابط الموقع" data-en-aria="Site links">
+        <a href="#top" data-en="Home">الرئيسية</a>
+        <a href="#about" data-en="About">من نحن</a>
+        <a href="#services" data-en="What We Do">خدماتنا</a>
+        <a href="#work" data-en="Portfolio">أعمالنا</a>
+        <a href="#process" data-en="How We Work">كيف نعمل</a>
+        <a href="#team" data-en="The Team">الفريق</a>
+        <a href="#contact" data-en="Contact">تواصل معنا</a>
+      </nav>
+
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.2-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.9s0-3.5.1-4.8C2.3 4 3.8 2.4 7.1 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 4.9a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8zm0 8a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.1-9.4a1.2 1.2 0 1 0 0 2.3 1.2 1.2 0 0 0 0-2.3z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.9 8.5H3.8V21h3.1V8.5zM5.3 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM21 21h-3.1v-6.1c0-1.5-.5-2.5-1.8-2.5-1 0-1.6.7-1.8 1.3-.1.2-.1.6-.1.9V21h-3.1V8.5h3.1v1.8a3.1 3.1 0 0 1 2.8-1.6c2 0 4 1.4 4 4.3V21z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.2L5.6 21h-3l7-8-6.8-10h6.1l4.3 5.7L17.5 3zm-1 16.2h1.6L7.6 4.7H5.8l10.7 14.5z"/></svg></a>
+        <a href="#" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M8.9 5.5c1.9 0 3.4.8 3.4 2.9 0 1.2-.6 1.9-1.5 2.4 1.3.4 2 1.4 2 2.9 0 2.4-2 3.3-4 3.3H2V5.5h6.9zM5 9.9h3.3c.9 0 1.4-.4 1.4-1.2S9.2 7.5 8.3 7.5H5v2.4zm0 4.9h3.5c1 0 1.7-.4 1.7-1.4s-.7-1.4-1.7-1.4H5v2.8zM19 15c.7 0 1.4-.4 1.6-1.1h2.1c-.5 1.9-2 2.9-3.8 2.9-2.6 0-4.3-1.8-4.3-4.4s1.8-4.4 4.3-4.4c2.8 0 4.2 2.3 4 4.9h-6c.1 1.3.8 2.1 2.1 2.1zm1.9-3.5c-.1-1.1-.8-1.7-1.8-1.7s-1.9.6-2.1 1.7h3.9zM15.5 6.3h4.9v1.3h-4.9V6.3z"/></svg></a>
+      </div>
+
+      <div class="foot-contact">
+        <a href="tel:+201000000000"><span class="ring"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2c1.1.4 2.3.6 3.6.6a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.6 3.6a1 1 0 0 1-.2 1z"/></svg></span><span dir="ltr">+20 100 000 0000</span></a>
+        <a href="mailto:info@ebitkar.com"><span class="ring"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 9.5a4 4 0 1 0 .5 5c-.6 1-2 1-2-.5V9"/></svg></span><span dir="ltr">info@ebitkar.com</span></a>
+      </div>
+    </div>
+
+    <div class="foot-bar">
+      <span>&copy; <span class="yr">2026</span> <span data-en="Ebitkar Smart Solutions. All rights reserved.">ابتكار للحلول الذكية. جميع الحقوق محفوظة.</span></span>
+      <span><a href="https://ebitkar.com" dir="ltr">ebitkar.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#top" class="to-top" id="toTop" aria-label="العودة للأعلى" data-en-aria="Back to top">
+  <svg viewBox="0 0 24 24"><path d="m12 5 8 8-1.4 1.4L13 8.8V20h-2V8.8l-5.6 5.6L4 13z"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>

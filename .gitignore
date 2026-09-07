@@ -1,0 +1,8 @@
+# build output — regenerate with: node build-artifact.js
+dist-preview.html
+
+# OS / editor cruft
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp

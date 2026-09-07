@@ -1,0 +1,294 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+<defs>
+<style>
+ .s{fill:none;stroke:#c6c6c6;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+ .t{fill:none;stroke:#cfcfcf;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+ .f{fill:#dcdcdc}
+ .lbl{font-family:cursive;font-size:15px;fill:#bdbdbd}
+</style>
+</defs>
+
+<!-- browser window w/ layout -->
+<g transform="translate(60,70)">
+  <path class="s" d="M2 6 q60-4 172-2 q6 0 6 8 l-1 108 q0 7-7 7 l-168 1 q-6 0-6-7 z"/>
+  <path class="t" d="M2 30 q90-3 178-1"/>
+  <circle class="t" cx="16" cy="18" r="4"/><circle class="t" cx="30" cy="18" r="4"/><circle class="t" cx="44" cy="18" r="4"/>
+  <path class="t" d="M14 44 q30-2 56 0 l1 30 q-28 3-57 1 z"/>
+  <path class="t" d="M84 44 q40-2 88 0 M84 56 q40-2 88 1 M84 68 q30-2 62 0"/>
+  <path class="t" d="M14 88 q75-3 158 0 M14 100 q50-2 104 1"/>
+</g>
+
+<!-- mobile phone -->
+<g transform="translate(300,50)">
+  <path class="s" d="M8 4 q30-3 62 0 q7 1 7 8 l0 118 q0 8-8 8 q-30 2-60 0 q-8-1-8-8 l0-118 q0-7 7-8 z"/>
+  <path class="t" d="M28 14 q14-2 30 0"/>
+  <circle class="t" cx="43" cy="126" r="6"/>
+  <path class="t" d="M18 30 q28-2 52 0 l0 24 q-26 2-52 0 z"/>
+  <path class="t" d="M18 66 q12-1 22 0 l0 18 q-11 1-22 0 z M50 66 q12-1 22 0 l0 18 q-11 1-22 0 z"/>
+  <path class="t" d="M18 96 q28-2 54 0"/>
+</g>
+
+<!-- bar chart -->
+<g transform="translate(470,90)">
+  <path class="s" d="M4 4 l0 96 q0 4 5 4 l104 1"/>
+  <path class="t" d="M20 78 l16 0 l0 24 l-16 0 z M46 52 l16 0 l0 50 l-16 0 z M72 62 l16 0 l0 40 l-16 0 z M98 30 l16 0 l0 72 l-16 0 z"/>
+  <path class="t" d="M18 66 q22-18 44-4 q22 14 46-26" stroke-dasharray="5 5"/>
+</g>
+
+<!-- chat bubble -->
+<g transform="translate(70,240)">
+  <path class="s" d="M6 12 q0-8 9-9 q50-4 104 0 q9 1 9 9 l0 44 q0 9-9 9 l-70 1 l-22 20 l2-21 q-14 0-16-9 z"/>
+  <path class="t" d="M22 28 q40-3 82 0 M22 42 q28-2 58 1"/>
+</g>
+
+<!-- gear -->
+<g transform="translate(250,260)">
+  <path class="s" d="M46 8 l10 0 l3 13 q7 2 13 6 l12-7 l7 7 l-7 12 q4 6 6 13 l13 3 l0 10 l-13 3 q-2 7-6 13 l7 12 l-7 7 l-12-7 q-6 4-13 6 l-3 13 l-10 0 l-3-13 q-7-2-13-6 l-12 7 l-7-7 l7-12 q-4-6-6-13 l-13-3 l0-10 l13-3 q2-7 6-13 l-7-12 l7-7 l12 7 q6-4 13-6 z"/>
+  <circle class="t" cx="51" cy="59" r="15"/>
+</g>
+
+<!-- code brackets -->
+<g transform="translate(420,265)">
+  <path class="s" d="M34 10 q-26 22-28 40 q-2 18 28 42"/>
+  <path class="s" d="M92 10 q26 22 28 40 q2 18-28 42"/>
+  <path class="t" d="M68 8 l-16 84"/>
+</g>
+
+<!-- lightbulb + idea -->
+<g transform="translate(590,240)">
+  <path class="s" d="M40 10 q-26 0-30 26 q-3 18 12 30 q5 4 5 12 l26 0 q0-8 5-12 q15-12 12-30 q-4-26-30-26 z"/>
+  <path class="t" d="M27 84 q13 2 26 0 M29 94 q11 2 22 0"/>
+  <path class="t" d="M6 20 l-12-8 M74 20 l12-8 M40-6 l0-12"/>
+  <text class="lbl" x="90" y="60">Idea</text>
+</g>
+
+<!-- megaphone -->
+<g transform="translate(770,60)">
+  <path class="s" d="M6 40 q0-8 8-8 l22 0 l52-26 q6-3 6 4 l0 68 q0 7-6 4 l-52-26 l-22 0 q-8 0-8-8 z"/>
+  <path class="t" d="M36 32 l0 24 M42 62 l6 26 q1 5 6 5 l8 0 q5 0 4-6 l-6-22"/>
+  <path class="t" d="M104 34 q12 8 12 22 q0 14-12 22"/>
+</g>
+
+<!-- envelope -->
+<g transform="translate(940,90)">
+  <path class="s" d="M4 8 q56-4 116 0 q6 0 6 6 l0 62 q0 6-6 6 q-58 3-116 0 q-6 0-6-6 l0-62 q0-6 6-6 z"/>
+  <path class="t" d="M6 12 l56 42 l58-42"/>
+</g>
+
+<!-- magnifier / seo -->
+<g transform="translate(1110,60)">
+  <circle class="s" cx="46" cy="46" r="34"/>
+  <path class="s" d="M70 72 l30 30"/>
+  <path class="t" d="M32 52 l10-14 l10 10 l12-20"/>
+</g>
+
+<!-- cursor -->
+<g transform="translate(1250,200)">
+  <path class="s" d="M8 4 l0 62 l15-15 l11 26 l12-6 l-11-24 l21-1 z"/>
+</g>
+
+<!-- user avatar -->
+<g transform="translate(60,400)">
+  <circle class="s" cx="42" cy="30" r="20"/>
+  <path class="s" d="M6 92 q0-32 36-32 q36 0 36 32"/>
+</g>
+
+<!-- wireframe layout grid -->
+<g transform="translate(180,410)">
+  <path class="s" d="M4 4 q80-3 160 0 l0 108 q-80 3-160 0 z"/>
+  <path class="t" d="M4 28 q80-3 160 0 M56 28 l0 84 M4 70 q26-2 52 0"/>
+  <path class="t" d="M72 44 q40-2 78 0 M72 60 q40-2 78 0 M72 76 q28-2 54 0 M72 92 q40-2 78 0"/>
+</g>
+
+<!-- pencil -->
+<g transform="translate(400,420)">
+  <path class="s" d="M4 96 l8-26 l58-58 l18 18 l-58 58 z"/>
+  <path class="s" d="M70 12 l10-10 q4-4 8 0 l10 10 q4 4 0 8 l-10 10 z"/>
+  <path class="t" d="M12 70 l18 18"/>
+</g>
+
+<!-- cloud -->
+<g transform="translate(540,420)">
+  <path class="s" d="M28 76 q-24 0-24-20 q0-18 20-20 q2-26 30-26 q24 0 30 20 q26-2 30 20 q4 26-22 26 z"/>
+  <path class="t" d="M44 56 l16-16 l16 16 M60 40 l0 34"/>
+</g>
+
+<!-- database -->
+<g transform="translate(710,410)">
+  <path class="s" d="M6 20 q0-14 34-14 q34 0 34 14 q0 14-34 14 q-34 0-34-14 z"/>
+  <path class="s" d="M6 20 l0 60 q0 14 34 14 q34 0 34-14 l0-60"/>
+  <path class="t" d="M6 50 q0 14 34 14 q34 0 34-14"/>
+</g>
+
+<!-- shopping cart -->
+<g transform="translate(850,420)">
+  <path class="s" d="M4 8 l16 0 l16 62 l58 0 l14-44 l-80 0"/>
+  <circle class="t" cx="42" cy="86" r="8"/><circle class="t" cx="86" cy="86" r="8"/>
+</g>
+
+<!-- curved arrows -->
+<g transform="translate(1000,420)">
+  <path class="s" d="M4 60 q30-56 92-38"/>
+  <path class="s" d="M84 6 l14 16 l-20 8"/>
+  <path class="t" d="M100 78 q-40 24-88-4"/>
+  <path class="t" d="M22 62 l-12 14 l20 8"/>
+</g>
+
+<!-- wifi -->
+<g transform="translate(1160,430)">
+  <path class="s" d="M4 34 q44-42 92 0"/>
+  <path class="s" d="M20 54 q30-28 60 0"/>
+  <path class="s" d="M36 72 q14-14 28 0"/>
+  <circle class="f" cx="50" cy="86" r="5"/>
+</g>
+
+<!-- target -->
+<g transform="translate(80,560)">
+  <circle class="s" cx="48" cy="48" r="42"/><circle class="t" cx="48" cy="48" r="26"/><circle class="f" cx="48" cy="48" r="7"/>
+  <path class="s" d="M48 48 l46-46 M78 4 l16 0 l0 16"/>
+</g>
+
+<!-- rocket -->
+<g transform="translate(230,560)">
+  <path class="s" d="M42 4 q22 22 22 50 l0 26 l-44 0 l0-26 q0-28 22-50 z"/>
+  <circle class="t" cx="42" cy="42" r="10"/>
+  <path class="t" d="M20 62 l-14 20 l14 0 M64 62 l14 20 l-14 0"/>
+  <path class="t" d="M34 86 q8 22 8 26 q0-4 8-26"/>
+</g>
+
+<!-- calendar -->
+<g transform="translate(360,570)">
+  <path class="s" d="M4 14 q54-3 110 0 l0 88 q-54 3-110 0 z"/>
+  <path class="t" d="M4 38 q54-3 110 0 M30 4 l0 20 M88 4 l0 20"/>
+  <path class="t" d="M22 54 l14 0 M50 54 l14 0 M78 54 l14 0 M22 76 l14 0 M50 76 l14 0 M78 76 l14 0"/>
+</g>
+
+<!-- play / video -->
+<g transform="translate(520,570)">
+  <path class="s" d="M4 10 q52-4 104 0 q6 0 6 6 l0 66 q0 6-6 6 q-52 3-104 0 q-6 0-6-6 l0-66 q0-6 6-6 z"/>
+  <path class="t" d="M44 32 l30 18 l-30 18 z"/>
+</g>
+
+<!-- heart / like -->
+<g transform="translate(670,580)">
+  <path class="s" d="M44 88 q-42-28-42-56 q0-22 22-22 q14 0 20 14 q6-14 20-14 q22 0 22 22 q0 28-42 56 z"/>
+</g>
+
+<!-- laptop -->
+<g transform="translate(800,570)">
+  <path class="s" d="M18 12 q46-3 92 0 l0 62 q-46 3-92 0 z"/>
+  <path class="s" d="M4 80 q60 4 120 0 l-10 14 q-50 3-100 0 z"/>
+  <path class="t" d="M34 28 q28-2 56 0 M34 42 q28-2 56 0 M34 56 q18-2 36 0"/>
+</g>
+
+<!-- flowchart -->
+<g transform="translate(960,570)">
+  <path class="s" d="M32 4 q22-2 44 0 l0 26 q-22 2-44 0 z"/>
+  <path class="s" d="M4 68 q22-2 44 0 l0 26 q-22 2-44 0 z"/>
+  <path class="s" d="M64 68 q22-2 44 0 l0 26 q-22 2-44 0 z"/>
+  <path class="t" d="M54 32 l0 16 l-28 0 l0 18 M54 32 l0 16 l32 0 l0 18"/>
+</g>
+
+<!-- padlock -->
+<g transform="translate(1120,580)">
+  <path class="s" d="M8 44 q30-3 62 0 l0 48 q-30 3-62 0 z"/>
+  <path class="s" d="M22 44 l0-16 q0-18 17-18 q17 0 17 18 l0 16"/>
+  <circle class="f" cx="39" cy="66" r="6"/>
+</g>
+
+<!-- trending line -->
+<g transform="translate(80,740)">
+  <path class="s" d="M4 4 l0 96 q0 4 5 4 l108 1"/>
+  <path class="s" d="M18 82 q26 4 40-24 q14-28 32-30 q10-1 24 8"/>
+  <path class="t" d="M100 30 l16 6 l-6 16"/>
+</g>
+
+<!-- hashtag -->
+<g transform="translate(250,750)">
+  <path class="s" d="M22 4 l-8 84 M52 4 l-8 84 M4 28 q34-3 62 0 M2 60 q34-3 62 0"/>
+</g>
+
+<!-- tablet -->
+<g transform="translate(360,740)">
+  <path class="s" d="M6 6 q40-3 80 0 q6 0 6 6 l0 88 q0 6-6 6 q-40 3-80 0 q-6 0-6-6 l0-88 q0-6 6-6 z"/>
+  <path class="t" d="M20 22 q26-2 52 0 l0 30 q-26 2-52 0 z M20 62 q26-2 52 0 M20 76 q18-2 36 0"/>
+</g>
+
+<!-- globe -->
+<g transform="translate(500,740)">
+  <circle class="s" cx="48" cy="50" r="44"/>
+  <path class="t" d="M4 50 q44 10 88 0 M48 6 q-22 22-22 44 q0 22 22 44 M48 6 q22 22 22 44 q0 22-22 44"/>
+</g>
+
+<!-- code file -->
+<g transform="translate(640,740)">
+  <path class="s" d="M8 4 l52 0 l28 28 l0 74 q-40 3-80 0 z"/>
+  <path class="t" d="M60 4 l0 28 l28 0"/>
+  <path class="t" d="M34 60 l-10 10 l10 10 M56 60 l10 10 l-10 10"/>
+</g>
+
+<!-- paint palette -->
+<g transform="translate(760,750)">
+  <path class="s" d="M48 4 q46 0 46 40 q0 18-20 18 l-10 0 q-12 0-12 12 q0 12-14 12 q-38 0-38-42 q0-40 48-40 z"/>
+  <circle class="f" cx="28" cy="36" r="5"/><circle class="f" cx="48" cy="24" r="5"/><circle class="f" cx="70" cy="36" r="5"/><circle class="f" cx="26" cy="60" r="5"/>
+</g>
+
+<!-- bell -->
+<g transform="translate(890,750)">
+  <path class="s" d="M12 78 q-6 0-6-5 q0-4 6-9 l0-26 q0-26 22-30 l0-6 q0-5 6-5 q6 0 6 5 l0 6 q22 4 22 30 l0 26 q6 5 6 9 q0 5-6 5 z"/>
+  <path class="t" d="M30 86 q10 12 20 0"/>
+</g>
+
+<!-- sitemap -->
+<g transform="translate(1000,750)">
+  <path class="s" d="M40 4 l30 0 l0 20 l-30 0 z M4 62 l28 0 l0 20 l-28 0 z M42 62 l28 0 l0 20 l-28 0 z M80 62 l28 0 l0 20 l-28 0 z"/>
+  <path class="t" d="M55 24 l0 18 M18 62 l0-20 l74 0 l0 20 M55 42 l0 20"/>
+</g>
+
+<!-- www + arrow -->
+<g transform="translate(1150,760)">
+  <text class="lbl" x="0" y="20">www.</text>
+  <path class="t" d="M0 40 q20-14 40 0 q20 14 40 0"/>
+  <path class="s" d="M4 76 q40-14 88 0"/>
+  <path class="s" d="M78 62 l16 14 l-16 12"/>
+</g>
+
+<!-- scattered marks -->
+<g>
+  <path class="t" d="M660 140 l0 24 M648 152 l24 0"/>
+  <path class="t" d="M1060 320 l0 20 M1050 330 l20 0"/>
+  <path class="t" d="M330 700 l0 20 M320 710 l20 0"/>
+  <circle class="t" cx="620" cy="360" r="9"/>
+  <circle class="t" cx="1300" cy="640" r="12"/>
+  <circle class="t" cx="180" cy="180" r="7"/>
+  <circle class="t" cx="900" cy="320" r="10"/>
+  <path class="t" d="M1290 100 q18-16 36 0 q18 16 36 0"/>
+  <path class="t" d="M150 950 q18-16 36 0 q18 16 36 0"/>
+  <path class="t" d="M640 940 q18-16 36 0 q18 16 36 0"/>
+</g>
+
+<!-- fillers -->
+<g transform="translate(1270,380)">
+  <path class="s" d="M4 4 l40 0 l0 40 l-40 0 z"/>
+  <path class="t" d="M14 24 l8 8 l14-16"/>
+</g>
+<g transform="translate(1250,880)">
+  <circle class="s" cx="30" cy="30" r="26"/>
+  <path class="t" d="M30 14 l0 16 l12 8"/>
+</g>
+<g transform="translate(60,880)">
+  <path class="s" d="M4 40 q30-36 60 0 q30 36 60 0"/>
+</g>
+<g transform="translate(430,890)">
+  <path class="s" d="M6 6 l90 0 l0 60 l-90 0 z"/>
+  <path class="t" d="M6 6 l45 34 l45-34"/>
+</g>
+<g transform="translate(840,880)">
+  <path class="s" d="M20 4 l0 60 M4 20 l60 0" stroke-width="3"/>
+  <circle class="t" cx="20" cy="20" r="30"/>
+</g>
+<g transform="translate(980,900)">
+  <path class="s" d="M4 50 l24-30 l20 22 l18-34 l24 42"/>
+  <path class="t" d="M4 50 l86 0"/>
+</g>
+</svg>
