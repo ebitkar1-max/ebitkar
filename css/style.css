@@ -399,6 +399,24 @@ html[dir="ltr"] .wedge-teeth{
   clip-path:polygon(96.8% 0,100% 0,3.2% 100%,0 100%);
 }
 
+/* the line that runs along the diagonal edge */
+.wedge-label{
+  position:absolute;
+  top:-4px;
+  inset-inline-end:calc(100% + 30px);
+  transform-origin:top left;
+  transform:rotate(58deg);
+  font-size:12px;
+  letter-spacing:1px;
+  color:rgba(255,255,255,.42);
+  white-space:nowrap;
+  pointer-events:none;
+}
+html[dir="ltr"] .wedge-label{
+  transform-origin:top right;
+  transform:rotate(-58deg);
+}
+
 /* angled phone / e-mail bars in the top corner */
 .hero-contact{
   position:absolute;
@@ -467,18 +485,6 @@ html[dir="ltr"] .hero-quote{left:auto;right:4%}
   flex:0 0 auto;
   align-self:start;
   margin-top:clamp(10px,7vh,74px);
-}
-.dia-label{
-  position:absolute;
-  top:2px;inset-inline-end:-6px;
-  transform:rotate(90deg);
-  transform-origin:top right;
-  font-size:13px;letter-spacing:3px;
-  color:var(--muted-l);
-}
-html[dir="ltr"] .dia-label{
-  inset-inline-end:auto;inset-inline-start:-6px;
-  transform:rotate(-90deg);transform-origin:top left;
 }
 .dia{
   position:absolute;
@@ -1067,7 +1073,7 @@ html[dir="ltr"] .foot-links a:hover{padding-inline-start:7px}
 @media (max-width:1060px){
   .hero-inner{grid-template-columns:1fr;justify-items:center}
   .diamonds{--d:76px;margin-top:6px;align-self:center}
-  .hero-quote,.wedge-teeth{display:none}
+  .hero-quote,.wedge-teeth,.wedge-label{display:none}
   .hero-wedge{clip-path:polygon(0 0,15% 0,40% 100%,0 100%)}
   html[dir="ltr"] .hero-wedge{clip-path:polygon(85% 0,100% 0,100% 100%,60% 100%)}
   .tb-current{display:none}
@@ -1319,15 +1325,6 @@ html[dir="rtl"] .svc-ico{margin-inline-start:6px}
    ========================================================================== */
 .contact{padding-block:clamp(84px,12vh,130px);--teeth-x:40%;--teeth-w:20%}
 .contact .slab{z-index:1}
-.contact-rot{
-  top:10%;left:57%;
-  transform-origin:top left;transform:rotate(62deg);
-  color:rgba(255,255,255,.34);
-}
-html[dir="ltr"] .contact-rot{
-  left:auto;right:57%;
-  transform-origin:top right;transform:rotate(-62deg);
-}
 .contact-grid{
   display:grid;
   grid-template-columns:1.08fr .92fr;
@@ -1429,7 +1426,7 @@ html[dir="rtl"] .foot-nav a::after{translate:50% 0}
    ========================================================================== */
 @media (max-width:760px){
   /* phones: same as the reference — burger only, no diamond cluster */
-  .hero-wedge,.hero-quote,.dia-label,.diamonds{display:none}
+  .hero-wedge,.hero-quote,.wedge-label,.diamonds{display:none}
 
 
   /* nothing dark behind the burger any more */
