@@ -399,23 +399,6 @@ html[dir="ltr"] .wedge-teeth{
   clip-path:polygon(96.8% 0,100% 0,3.2% 100%,0 100%);
 }
 
-/* rotated line of text along the diagonal */
-.wedge-label{
-  position:absolute;
-  top:16%;
-  left:33.5%;right:auto;
-  transform-origin:top left;
-  transform:rotate(63deg);
-  font-size:14px;letter-spacing:1.4px;
-  color:rgba(255,255,255,.4);
-  white-space:nowrap;
-}
-html[dir="ltr"] .wedge-label{
-  left:auto;right:33.5%;
-  transform-origin:top right;
-  transform:rotate(-63deg);
-}
-
 /* angled phone / e-mail bars in the top corner */
 .hero-contact{
   position:absolute;
@@ -446,7 +429,7 @@ html[dir="rtl"] .hero-contact a{
   z-index:6;
   margin:0;
   left:4%;right:auto;
-  bottom:23%;
+  bottom:19%;
   width:min(300px,26vw);
   font-size:clamp(15px,1.35vw,19px);
   font-weight:300;
@@ -1084,7 +1067,7 @@ html[dir="ltr"] .foot-links a:hover{padding-inline-start:7px}
 @media (max-width:1060px){
   .hero-inner{grid-template-columns:1fr;justify-items:center}
   .diamonds{--d:76px;margin-top:6px;align-self:center}
-  .hero-quote,.wedge-label,.wedge-teeth{display:none}
+  .hero-quote,.wedge-teeth{display:none}
   .hero-wedge{clip-path:polygon(0 0,15% 0,40% 100%,0 100%)}
   html[dir="ltr"] .hero-wedge{clip-path:polygon(85% 0,100% 0,100% 100%,60% 100%)}
   .tb-current{display:none}
