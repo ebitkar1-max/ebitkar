@@ -617,29 +617,6 @@ html[dir="rtl"] .hero-links a:hover{transform:translateX(-10px)}
 html[dir="ltr"] .hero-links a:hover{transform:translateX(10px)}
 .hero-links a:hover::after{translate:0 5px}
 
-/* dark charcoal band closing the hero — diagonal top edge */
-.hero-strip{
-  position:relative;
-  z-index:5;
-  background:var(--ink);
-  clip-path:polygon(0 0,100% 54px,100% 100%,0 100%);
-  padding:clamp(58px,7.2vh,86px) 0 24px;
-}
-html[dir="ltr"] .hero-strip{clip-path:polygon(0 54px,100% 0,100% 100%,0 100%)}
-/* darker triangle for depth */
-.hero-strip::before{
-  content:'';position:absolute;
-  inset-inline-end:0;bottom:0;
-  width:52%;height:100%;
-  background:var(--ink-3);
-  clip-path:polygon(34% 100%,100% 8%,100% 100%);
-  opacity:.85;
-  pointer-events:none;
-}
-.hero-strip .shell{
-  display:flex;flex-wrap:wrap;gap:18px 30px;
-  align-items:center;justify-content:space-between;
-}
 .socials{display:flex;gap:11px}
 .socials a{
   width:38px;height:38px;border-radius:50%;
@@ -649,27 +626,6 @@ html[dir="ltr"] .hero-strip{clip-path:polygon(0 54px,100% 0,100% 100%,0 100%)}
 }
 .socials a svg{width:17px;height:17px;fill:currentColor}
 .socials a:hover{transform:translateY(-5px);background:#fff;color:var(--ink)}
-
-.strip-links{
-  display:flex;flex-wrap:wrap;gap:6px 16px;
-  font-size:13.5px;color:#cfcfcf;
-}
-.strip-links a{transition:color .25s}
-.strip-links a:hover{color:var(--orange-2)}
-.strip-links .sep{color:#6a6a6a}
-.strip-copy{font-size:12px;color:#8e8e8e}
-
-/* scroll cue */
-.cue{
-  display:grid;place-items:center;
-  margin-top:clamp(14px,2.8vh,30px);
-}
-.cue span{
-  display:block;width:2px;height:34px;
-  background:linear-gradient(180deg,var(--orange),transparent);
-  animation:cue 1.9s ease-in-out infinite;
-}
-@keyframes cue{0%,100%{transform:scaleY(.35);opacity:.5}50%{transform:scaleY(1);opacity:1}}
 
 /* ==========================================================================
    Generic section furniture
@@ -1155,10 +1111,6 @@ html[dir="ltr"] .foot-links a:hover{padding-inline-start:7px}
   .quick-menu{padding-top:80px}
   .hero{padding-top:100px}
   .hero-links li{padding-inline-end:0 !important}
-  .hero-strip{clip-path:polygon(0 0,100% 30px,100% 100%,0 100%);padding-top:62px}
-  html[dir="ltr"] .hero-strip{clip-path:polygon(0 30px,100% 0,100% 100%,0 100%)}
-  .hero-strip .shell{justify-content:center;text-align:center}
-  .strip-copy{width:100%;text-align:center}
   .form-row{grid-template-columns:1fr}
   .to-top{bottom:22px;inset-inline-end:18px;width:42px;height:42px}
 }
@@ -1496,9 +1448,6 @@ html[dir="rtl"] .foot-nav a::after{translate:50% 0}
   /* phones: same as the reference — burger only, no diamond cluster */
   .hero-wedge,.hero-quote,.dia-label,.diamonds{display:none}
 
-  /* the dark strip (socials + links + copyright) landed inside the first
-     screen once the hero shrank — it duplicates the footer, so drop it here */
-  .hero-strip{display:none}
 
   /* nothing dark behind the burger any more */
   .burger span,body.scrolled .burger span{background:var(--ink)}

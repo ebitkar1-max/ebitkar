@@ -293,8 +293,6 @@
      7. Current year
      --------------------------------------------------------------------- */
   var y = String(new Date().getFullYear());
-  var yr = document.getElementById('yr');
-  if (yr) yr.textContent = y;
   document.querySelectorAll('.yr').forEach(function (el) { el.textContent = y; });
 
 })();
