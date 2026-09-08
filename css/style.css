@@ -339,14 +339,22 @@ html[dir="rtl"] .quick-menu a::after{translate:50% 0}
 .hero .doodles{
   position:absolute;inset:0;
   background:url('../img/doodles.svg') repeat;
-  background-size:clamp(340px,38vw,560px) auto;
-  opacity:.78;
+  background-size:clamp(430px,46vw,760px) auto;
+  opacity:.92;
   z-index:0;
-  animation:drift 120s linear infinite;
+  animation:drift 150s linear infinite;
+  /* dense in the outer corner, thinning towards the charcoal wedge —
+     the sketches read as artwork rather than wallpaper */
+  -webkit-mask-image:linear-gradient(to bottom left,#000 0%,rgba(0,0,0,.72) 40%,rgba(0,0,0,.22) 72%,transparent 92%);
+  mask-image:linear-gradient(to bottom left,#000 0%,rgba(0,0,0,.72) 40%,rgba(0,0,0,.22) 72%,transparent 92%);
+}
+html[dir="ltr"] .hero .doodles{
+  -webkit-mask-image:linear-gradient(to bottom right,#000 0%,rgba(0,0,0,.72) 40%,rgba(0,0,0,.22) 72%,transparent 92%);
+  mask-image:linear-gradient(to bottom right,#000 0%,rgba(0,0,0,.72) 40%,rgba(0,0,0,.22) 72%,transparent 92%);
 }
 @keyframes drift{
   from{background-position:0 0}
-  to{background-position:620px 420px}
+  to{background-position:760px 520px}
 }
 
 /* pale diagonal sash across the top corner */

@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
 <defs>
 <style>
- .s{fill:none;stroke:#c6c6c6;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
- .t{fill:none;stroke:#cfcfcf;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
- .f{fill:#dcdcdc}
- .lbl{font-family:cursive;font-size:15px;fill:#bdbdbd}
+ .s{fill:none;stroke:#8e8e8e;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+ .t{fill:none;stroke:#9c9c9c;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+ .f{fill:#b4b4b4}
+ .lbl{font-family:cursive;font-size:16px;fill:#8e8e8e}
 </style>
 </defs>
 
@@ -290,5 +290,14 @@
 <g transform="translate(980,900)">
   <path class="s" d="M4 50 l24-30 l20 22 l18-34 l24 42"/>
   <path class="t" d="M4 50 l86 0"/>
+</g>
+
+<!-- markup tags, corner detail -->
+<g id="tags" transform="translate(1258,26)">
+  <text class="lbl" x="0" y="0">&lt;head&gt;</text>
+  <text class="lbl" x="14" y="26">&lt;body&gt;</text>
+</g>
+<g transform="translate(60,150)">
+  <path class="s" d="M4 30 q22-26 44 0 M4 30 q22 26 44 0" opacity=".5"/>
 </g>
 </svg>
