@@ -1579,29 +1579,41 @@ html[dir="rtl"] .foot-nav a::after{translate:50% 0}
     linear-gradient(200deg,rgba(28,28,28,.55) 0%,rgba(28,28,28,.9) 42%,rgba(28,28,28,.97) 100%);
 }
 
-/* pale diagonal sash cutting the top corner, with a ghost wordmark on it */
+/* pale diagonal sheen across the top corner, with a ghost wordmark.
+   Positioned with PHYSICAL sides: clip-path percentages are always measured
+   from the left edge, so a logical inset would flip the box without flipping
+   the clip and drop the triangle straight over the footer text in Arabic.
+   Kept as a light sheen rather than a white panel so it cannot bury a link
+   even where it does cross one. */
 .foot-sash{
   position:absolute;
-  top:0;inset-inline-start:0;
-  width:62%;height:100%;
+  top:0;left:0;right:auto;
+  width:58%;height:100%;
   z-index:-1;
-  background:linear-gradient(160deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.62) 55%,rgba(255,255,255,.4) 100%);
-  clip-path:polygon(0 0,64% 0,0 92%);
+  background:linear-gradient(160deg,rgba(255,255,255,.13) 0%,rgba(255,255,255,.07) 55%,rgba(255,255,255,.02) 100%);
+  clip-path:polygon(0 0,66% 0,0 94%);
   pointer-events:none;
 }
-html[dir="ltr"] .foot-sash{clip-path:polygon(0 0,64% 0,0 92%)}
+html[dir="rtl"] .foot-sash{
+  left:auto;right:0;
+  clip-path:polygon(100% 0,34% 0,100% 94%);
+}
 .foot-sash span{
   position:absolute;
-  top:16%;inset-inline-start:5%;
-  font-size:clamp(30px,5vw,62px);
+  top:14%;left:6%;
+  font-size:clamp(28px,4.6vw,56px);
   font-weight:800;
   letter-spacing:4px;
-  color:rgba(28,28,28,.09);
+  color:rgba(255,255,255,.06);
   transform:rotate(-32deg);
   transform-origin:top left;
   white-space:nowrap;
 }
-html[dir="rtl"] .foot-sash span{transform:rotate(32deg);transform-origin:top right}
+html[dir="rtl"] .foot-sash span{
+  left:auto;right:6%;
+  transform:rotate(32deg);
+  transform-origin:top right;
+}
 
 /* the sash overlaps the first rows, so lift the content clear of it */
 .foot .shell{position:relative;z-index:1}
@@ -1609,6 +1621,6 @@ html[dir="rtl"] .foot-sash span{transform:rotate(32deg);transform-origin:top rig
 
 @media (max-width:760px){
   .foot-sash{width:100%;clip-path:polygon(0 0,100% 0,0 46%)}
-  html[dir="ltr"] .foot-sash{clip-path:polygon(0 0,100% 0,0 46%)}
-  .foot-sash span{font-size:26px}
+  html[dir="rtl"] .foot-sash{clip-path:polygon(100% 0,0 0,100% 46%)}
+  .foot-sash span{font-size:24px}
 }
