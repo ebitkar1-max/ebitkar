@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#b9b3ab"/><stop offset="1" stop-color="#6d6862"/>
+ </linearGradient>
+ <filter id="soft" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur stdDeviation="26"/></filter>
+</defs>
+<rect width="1400" height="760" fill="url(#sky)"/>
+<g filter="url(#soft)">
+ <rect x="-40" y="380" width="70" height="380" fill="#282828"/><rect x="90" y="283" width="107" height="477" fill="#5d5d5d"/><rect x="220" y="186" width="84" height="574" fill="#4c4c4c"/><rect x="350" y="89" width="121" height="671" fill="#3b3b3b"/><rect x="480" y="-8" width="98" height="768" fill="#2a2a2a"/><rect x="610" y="315" width="75" height="445" fill="#5f5f5f"/><rect x="740" y="218" width="112" height="542" fill="#4e4e4e"/><rect x="870" y="121" width="89" height="639" fill="#3d3d3d"/><rect x="1000" y="24" width="126" height="736" fill="#2c2c2c"/><rect x="1130" y="347" width="103" height="413" fill="#616161"/><rect x="1260" y="250" width="80" height="510" fill="#505050"/>
+ <circle cx="1150" cy="180" r="150" fill="#c9b697"/>
+ <circle cx="240" cy="120" r="120" fill="#d2cec6"/>
+ <rect x="0" y="600" width="1400" height="200" fill="#3a3733"/>
+</g>
+</svg>

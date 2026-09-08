@@ -403,7 +403,7 @@ html[dir="ltr"] .wedge-teeth{
 .wedge-label{
   position:absolute;
   top:-58px;
-  inset-inline-end:calc(100% + 104px);
+  inset-inline-end:calc(100% + 70px);
   transform-origin:top left;
   transform:rotate(58deg);
   font-size:13.5px;
@@ -1544,4 +1544,63 @@ html[dir="rtl"] .foot-nav a::after{translate:50% 0}
     padding-inline:20px;
     margin-inline:-17px;
   }
+}
+
+/* ==========================================================================
+   Footer — photograph behind the light/dark diagonal
+   --------------------------------------------------------------------------
+   img/footer-bg.svg is a stand-in; drop a real photograph in its place and
+   nothing else needs to change.
+   ========================================================================== */
+.foot{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:var(--ink-3);
+}
+
+/* the photograph, dimmed enough that every link stays legible */
+.foot-photo{
+  position:absolute;inset:0;z-index:-3;
+  background:url('../img/footer-bg.svg') center/cover no-repeat;
+  filter:grayscale(.55) contrast(1.05);
+}
+.foot::before{
+  content:'';position:absolute;inset:0;z-index:-2;
+  background:
+    linear-gradient(200deg,rgba(28,28,28,.55) 0%,rgba(28,28,28,.9) 42%,rgba(28,28,28,.97) 100%);
+}
+
+/* pale diagonal sash cutting the top corner, with a ghost wordmark on it */
+.foot-sash{
+  position:absolute;
+  top:0;inset-inline-start:0;
+  width:62%;height:100%;
+  z-index:-1;
+  background:linear-gradient(160deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.62) 55%,rgba(255,255,255,.4) 100%);
+  clip-path:polygon(0 0,64% 0,0 92%);
+  pointer-events:none;
+}
+html[dir="ltr"] .foot-sash{clip-path:polygon(0 0,64% 0,0 92%)}
+.foot-sash span{
+  position:absolute;
+  top:16%;inset-inline-start:5%;
+  font-size:clamp(30px,5vw,62px);
+  font-weight:800;
+  letter-spacing:4px;
+  color:rgba(28,28,28,.09);
+  transform:rotate(-32deg);
+  transform-origin:top left;
+  white-space:nowrap;
+}
+html[dir="rtl"] .foot-sash span{transform:rotate(32deg);transform-origin:top right}
+
+/* the sash overlaps the first rows, so lift the content clear of it */
+.foot .shell{position:relative;z-index:1}
+.foot-top{padding-top:8px}
+
+@media (max-width:760px){
+  .foot-sash{width:100%;clip-path:polygon(0 0,100% 0,0 46%)}
+  html[dir="ltr"] .foot-sash{clip-path:polygon(0 0,100% 0,0 46%)}
+  .foot-sash span{font-size:26px}
 }

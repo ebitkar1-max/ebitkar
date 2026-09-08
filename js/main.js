@@ -295,4 +295,97 @@
   var y = String(new Date().getFullYear());
   document.querySelectorAll('.yr').forEach(function (el) { el.textContent = y; });
 
+  /* ----------------------------------------------------------------------
+     8. Keep the angled hero line inside the charcoal wedge
+
+     The wedge is clipped by percentages, so its diagonal changes angle with
+     the window's aspect ratio while the label is positioned off the diamond
+     cluster. At some sizes the label drifted onto the light side and the
+     white text vanished. Rather than guess a CSS offset that only holds at
+     one size, nudge the label along the wedge's own inward normal until it
+     clears the edge by a set margin.
+     --------------------------------------------------------------------- */
+  var LABEL_INSET = 22;   // px of dark we want on the label's leading edge
+
+  function wedgePolygon() {
+    var hero = document.getElementById('top');
+    var wedge = document.querySelector('.hero-wedge');
+    if (!hero || !wedge || getComputedStyle(wedge).display === 'none') return null;
+
+    var cp = getComputedStyle(wedge).clipPath || '';
+    if (cp.indexOf('polygon') !== 0) return null;
+
+    var box = hero.getBoundingClientRect();
+    var inner = cp.slice(cp.indexOf('(') + 1, cp.lastIndexOf(')'));
+    var val = function (tok, total) {
+      tok = tok.trim();
+      return tok.slice(-1) === '%' ? parseFloat(tok) / 100 * total : parseFloat(tok);
+    };
+    var pts = inner.split(',').map(function (pair) {
+      var p = pair.trim().split(/\s+/);
+      return [box.left + val(p[0], box.width), box.top + val(p[1], box.height)];
+    });
+    return pts.length === 4 ? pts : null;
+  }
+
+  function placeWedgeLabel() {
+    var label = document.querySelector('.wedge-label');
+    if (!label) return;
+
+    // 'translate' composes before 'transform', so this shifts the label in
+    // page axes and the CSS rotate still happens around the moved origin.
+    // (A margin would not work here: the label is placed from its inline-end.)
+    label.style.removeProperty('translate');
+
+    var pts = wedgePolygon();
+    if (!pts || getComputedStyle(label).display === 'none') return;
+
+    var rtl = html.getAttribute('dir') === 'rtl';
+    // the diagonal runs between the two inner corners
+    var A = rtl ? pts[1] : pts[0];
+    var B = rtl ? pts[2] : pts[3];
+    var dx = B[0] - A[0], dy = B[1] - A[1];
+    var len = Math.hypot(dx, dy);
+    if (!len) return;
+
+    // signed distance from the edge, positive towards the dark side
+    var cross = function (p) { return ((p[0] - A[0]) * dy - (p[1] - A[1]) * dx) / len; };
+    var probe = rtl ? [A[0] - 50, A[1] + 10] : [A[0] + 50, A[1] + 10];
+    var sign = cross(probe) < 0 ? -1 : 1;
+
+    // corners of the label's rotated quad, measured from its unrotated box
+    var prev = label.style.transform;
+    label.style.transform = 'none';
+    var r = label.getBoundingClientRect();
+    label.style.transform = prev;
+
+    var w = r.width, h = r.height;
+    var rad = (rtl ? 58 : -58) * Math.PI / 180;
+    var ox = rtl ? r.left : r.left + w, oy = r.top;
+    var rot = function (px, py) {
+      return [ox + px * Math.cos(rad) - py * Math.sin(rad),
+              oy + px * Math.sin(rad) + py * Math.cos(rad)];
+    };
+    var quad = rtl
+      ? [rot(0, 0), rot(w, 0), rot(w, h), rot(0, h)]
+      : [rot(-w, 0), rot(0, 0), rot(0, h), rot(-w, h)];
+
+    var nearest = Infinity;
+    quad.forEach(function (p) { nearest = Math.min(nearest, sign * cross(p)); });
+
+    var shortfall = LABEL_INSET - nearest;
+    if (shortfall <= 0) return;
+
+    // push along the inward normal of the edge
+    var nx = sign * dy / len, ny = -sign * dx / len;
+    label.style.translate = Math.round(nx * shortfall) + 'px ' + Math.round(ny * shortfall) + 'px';
+  }
+
+  placeWedgeLabel();
+  window.addEventListener('resize', placeWedgeLabel, { passive: true });
+  document.querySelectorAll('.lang-switch button').forEach(function (b) {
+    b.addEventListener('click', function () { setTimeout(placeWedgeLabel, 60); });
+  });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeWedgeLabel);
+
 })();
