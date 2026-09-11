@@ -1624,3 +1624,25 @@ html[dir="rtl"] .foot-sash span{
   html[dir="rtl"] .foot-sash{clip-path:polygon(100% 0,0 0,100% 46%)}
   .foot-sash span{font-size:24px}
 }
+
+/* footer address — its own row, the phone/email pair is already crowded */
+.foot-address{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin-top:4px;
+  max-width:min(560px,100%);
+  font-style:normal;
+  font-size:14.5px;
+  line-height:1.7;
+  color:#cfcfcf;
+  text-align:start;
+}
+.foot-address .ring{width:48px;height:48px;flex-basis:48px}
+.foot-address .ring svg{width:20px;height:20px}
+
+@media (max-width:560px){
+  .foot-address{gap:11px;font-size:13.5px}
+  .foot-address .ring{width:42px;height:42px;flex-basis:42px}
+}
