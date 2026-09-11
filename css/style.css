@@ -1639,6 +1639,14 @@ html[dir="rtl"] .foot-sash span{
   color:#cfcfcf;
   text-align:start;
 }
+.foot-address a{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:inherit;
+  transition:color .28s;
+}
+.foot-address a:hover{color:#fff}
 .foot-address .ring{width:48px;height:48px;flex-basis:48px}
 .foot-address .ring svg{width:20px;height:20px}
 
