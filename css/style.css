@@ -1371,7 +1371,6 @@ html[dir="rtl"] .svc-ico{margin-inline-start:6px}
 }
 .contact-dark-col a:hover{color:#fff}
 .ring-txt{font-size:17px;font-weight:500;letter-spacing:.4px}
-.ring-addr{font-size:14.5px;font-weight:400;line-height:1.65;max-width:34ch}
 .ring-plain{flex-direction:column;gap:2px;text-align:center;margin-top:8px}
 .ring-plain b{font-size:16px;color:#fff}
 .ring-plain small{font-size:13px;color:#9d9d9d}
